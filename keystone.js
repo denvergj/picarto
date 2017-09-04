@@ -1,7 +1,7 @@
 // Simulate config options from your production environment by
 // customising the .env file in your project's root folder.
 require('dotenv').config();
-
+require('dotenv').load();
 // Require keystone
 var keystone = require('keystone');
 var handlebars = require('express-handlebars');
@@ -19,7 +19,7 @@ keystone.init({
 	'favicon': 'public/favicon.ico',
 	'views': 'templates/views',
 	'view engine': '.hbs',
-
+	'cloudinary config': 'cloudinary://494561111212487:00WBcD4SlSWHFXTSiMKaZl_qMao@picarto',
 	'custom engine': handlebars.create({
 		layoutsDir: 'templates/views/layouts',
 		partialsDir: 'templates/views/partials',
@@ -60,8 +60,6 @@ keystone.set('nav', {
 	enquiries: 'enquiries',
 	users: 'users',
 });
-
-// Start Keystone to connect to your database and initialise the web server
 
 
 if (!process.env.MAILGUN_API_KEY || !process.env.MAILGUN_DOMAIN) {
