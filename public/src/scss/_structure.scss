@@ -1,0 +1,56 @@
+section {
+	&.light-gray {
+		background: #f8f8f8;
+		padding: 30px 0;
+	} 
+}
+ 
+.content-container {
+	max-width: 1100px;
+	padding: 0 20px;
+	margin: 0 auto;
+	position: relative;
+}
+ 
+@media (max-width:960px) {
+	.content-container {
+	    max-width: 100%; 
+		padding: 0 20px;
+	}
+} 
+
+@media (max-width:767px) {
+	.content-container {
+		padding: 0 20px;
+		max-width: 100%;
+		h3 {
+			line-height: 30px;
+		}
+	}
+}
+
+@media (max-width:639px) {
+	.content-container {
+/*
+		> h1,
+		> h2,
+		> h3,
+		> h4,
+		h1.post-title,
+		h2.post-title,
+		h3.post-title,
+		h4.post-title {
+			font-size: 24px;
+			line-height: 30px;
+		}
+*/
+	}
+/*
+	section {
+		p {
+			font-size: 18px;
+			line-height: 24px;
+		}
+	}
+*/
+}

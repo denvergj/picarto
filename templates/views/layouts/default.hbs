@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<title>{{ pagetitle }} | Picarto</title>
+		<link rel="shortcut icon" href="/favicon.ico" type="image/x-icon">
+		<link href="/dist/css/app.min.css" rel="stylesheet">
+
+		{{!-- This file provides the default styling for the KeystoneJS Content Editor
+			- only renders when user is logged in and admin--}}
+		{{{isAdminEditorCSS user}}}
+
+		{{!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries
+		//- Safely remove this block if you are not targeting IE8 --}}
+		<!--[if lt IE 9]>
+			<script src="//cdn.jsdelivr.net/html5shiv/3.7.3/html5shiv.js"></script>
+			<script src="//cdn.jsdelivr.net/respond/1.4.2/respond.min.js"></script>
+		<![endif]-->
+	</head>
+	<body>
+		<header>
+			<div class="content-container">
+				<div id="logo">
+					<a href="/">
+						<img src="/dist/imgs/logo.png" alt="Picarto"/>
+					</a>
+				</div>
+				<nav class="navbar">
+					{{# each navLinks}}
+						<li {{#ifeq ../section key}}class="active"{{else}}{{/ifeq}} id="{{ id }}">
+							<a href="{{ href }}">{{ label }}</a>
+						</li>
+					{{/each}}
+				</nav>
+			</div>
+		</header>
+		<div id="body">
+			<!--
+				Flash messages allow you to display once-off status messages to users, e.g. form
+				validation errors, success messages, etc
+			-->
+			{{#if messages}}
+			<div id="flash-messages" class="container">
+				{{#if messages.info}}
+				<div class="alert alert-info">
+						{{{flashMessages messages.info}}}
+				</div>
+				{{/if}}
+				{{#if messages.success}}
+				<div class="alert alert-success">
+						{{{flashMessages messages.success}}}
+				</div>
+				{{/if}}
+				{{#if messages.warning}}
+				<div class="alert alert-warning">
+						{{{flashMessages messages.warning}}}
+				</div>
+				{{/if}}
+				{{#if messages.error}}
+				<div class="alert alert-danger">
+						{{{flashMessages messages.error}}}
+				</div>
+				{{/if}}
+			</div>
+			{{/if}}
+			<!-- The content block should contain the body of your template's content-->
+			{{{body}}}
+		</div>
+		<footer class="content-container">
+			
+			<div class="paymentMethods">
+                <!-- PayPal Logo -->
+                <table border="0" cellpadding="10" cellspacing="0" align="center">
+                    <tbody><tr>
+                        <td align="center"></td></tr>
+                    <tr>
+                        <td align="center">
+                            <a href="https://www.paypal.com/webapps/mpp/paypal-popup" title="How PayPal Works" onclick="javascript:window.open('https://www.paypal.com/webapps/mpp/paypal-popup','WIPaypal','toolbar=no, location=no, directories=no, status=no, menubar=no, scrollbars=yes, resizable=yes, width=1060, height=700'); return false;">
+                                <img src="/dist/imgs/payment-methods.jpg" border="0" alt="PayPal Acceptance Mark">
+                            </a>
+                        </td>
+                    </tr>
+                	</tbody>
+                </table>
+                <!-- PayPal Logo -->
+			</div>
+			
+			<div class="textSection footerText">
+				<h3>Want more?</h3>
+				<p>Enter your email address for exclusive discounts and latest updates</p>
+			</div>
+			
+			<!-- Begin MailChimp Signup Form -->
+			<div id="mc_embed_signup">
+				<form action="https://picarto.us6.list-manage.com/subscribe/post?u=44e5529e44e490c709a64c203&amp;id=ad02ff83e8" method="post" id="mc-embedded-subscribe-form" name="mc-embedded-subscribe-form" class="validate" target="_blank" novalidate="">
+					<input type="email" value="" name="EMAIL" class="email" id="mce-EMAIL" placeholder="Your email goes here..." required="">
+					<input type="submit" value="SIGN UP" name="subscribe" id="mc-embedded-subscribe" class="button">
+				</form>
+				
+			  <br>
+			  <h2 id="result"></h2>
+			</div><!--End mc_embed_signup-->
+			
+			
+			
+			<hr/>
+			
+			<div class="social">
+				<a href="">
+					<img src="/dist/imgs/facebook.png" />
+				</a>
+			</div>
+			<div class="copyright">
+				<span>&copy;</span> 2017 Picarto Pty Ltd | Privacy Policy
+			</div>
+		</footer>
+		{{!--
+			//- jQuery 1.11.3 is included by default, and required by both Bootstrap
+			//- and the KeystoneJS Content Editor. If you are not targeting IE8,
+			//- you can upgrade to 2.1.4 (also bundled) for better performance.
+		--}}
+		<script src="/dist/js/main.min.js"></script>
+		
+		
+		
+		{{{isAdminEditorJS user}}}
+	</body>
+</html>

@@ -1,0 +1,325 @@
+#home {
+	margin-top: 130px; 
+	section {
+		&#slogan {
+			h1 {
+				color: #d94b77;
+				font-family: $primary-font;
+				font-size: 42px;
+				line-height: 56px;
+				position: absolute;
+			    top: -100px;
+			    left: 50%;
+			    margin-left: -35%;
+			}
+		}
+		&#introduction {
+			padding: 100px 51px;
+			p {
+				text-align: center;
+				font-size: 26px;
+				line-height: 40px;
+				margin-bottom: 80px;
+			}
+			a {
+				&.btn {
+					max-width: 200px;
+					margin: 0 auto;
+					padding: 20px;
+				}
+			}
+		}
+		&#paintingExample {
+			#imageRevealer {
+			    max-width: 920px;
+				height: 568px;
+				margin: 0 auto 50px auto;
+				overflow: hidden;
+				.changeImage {
+					display: none;
+					cursor: pointer;
+				    background: rgba(0,0,0,0.3);
+				    position: absolute;
+				    bottom: 20px;
+				    right: 20px;
+				    height: 50px;
+				    font-family: $primary-font;
+				    width: 123px;
+				    padding: 10px;
+				    text-align: center;
+				    line-height: 31px;
+				    font-size: 14px;
+				    color: #fff;
+				}
+			}
+			.caption {
+			    max-width: 650px;
+				margin: 0 auto 80px auto;
+				p,
+				a {
+					text-align: center;
+					font-size: 16px;
+					line-height: 28px;
+				}
+				a {
+					font-family: $primary-font-bold;
+					margin-top: 30px;
+					i { 
+						font-size: 15px; 
+					}
+				}
+			} 
+		}
+		&#enticeExamples {
+			margin: 150px 0 50px 0;
+			overflow: hidden;
+			.textSection {
+				margin-bottom: 120px;
+				h3 {
+					font-size: 42px;
+					line-height: 52px;
+					font-family: $primary-font;
+					color: #d3135a;
+				}
+				p {
+					font-size: 16px;
+				}
+			}
+			.fadedMemories {
+			    background: url('/dist/imgs/black-to-colour.jpg') no-repeat;
+			    height: 340px;
+			    background-size: 54%;
+			    background-position: 93% 0%;
+			    .innerContent {
+				    margin: 116px 0 0 0% !important;
+				    text-align: left;
+				    width: 48%;
+				    float: left;
+				}
+			}
+			.lovedTogether {
+				background: url('/dist/imgs/timeless-photos.jpg') no-repeat;
+			    background-size: 53%;
+			    background-position: top left;
+			    height: 340px;
+			    .innerContent { 
+				    margin: 116px 0 0 0% !important;
+				    text-align: left;
+				    width: 41%;
+				    float: right;
+			    }
+			}
+		}
+		&.largeImageWithText {
+		    max-width: 1100px;
+			margin: 0 auto;
+			&#married,
+			&#madewithlove {
+				.content {
+					padding: 15% 0;
+				}
+			}
+			.content {
+				margin: 0 auto;
+				max-width: 600px;
+				h3,
+				p,
+				a {
+					color: #fff;
+				}
+				h3 { 
+					text-align: center;
+					font-family: $primary-font;
+					font-size: 42px;
+					margin-bottom: 50px;
+				}
+				p,
+				a {
+					text-align: center;
+					font-size: 16px;
+					line-height: 28px;
+				}
+				a {
+					font-family: $primary-font-bold;
+					margin-top: 30px;
+					i { 
+						font-size: 15px; 
+					}
+				}
+			}
+		}
+		&#how-does-it-work {
+			padding: 180px 0;
+			text-align: center;
+			h3 { 
+				font-family: $primary-font;
+				font-size: 42px;
+				margin-bottom: 50px;
+				color: #d94b77;
+			}
+			.step {
+				width: 32.3%;
+			    display: inline-block;
+			    padding: 0 14px;
+			    vertical-align: top;
+			    margin: 50px 0;
+			}
+			a {
+				font-family: $primary-font-bold;
+				margin-top: 30px;
+				font-size: 18px;
+				text-decoration: none;
+				display: inline-block;
+				position: relative;
+				&:after {
+					content: '';
+					border-bottom: 2px dashed #d94b77;
+				    height: 6px;
+				    width: 100%;
+				    position: absolute;
+				    left: 0;
+				}
+				&:hover {
+					&:after {
+						border-bottom: 2px solid #d94b77;
+					}
+				}
+				i { 
+					font-size: 18px; 
+					margin-left: 10px;
+				}
+			}
+		}
+	}
+}
+
+
+@media (max-width: 1279px) and (min-width: 320px) {
+	#home {
+		section {
+			&#paintingExample {
+				#imageRevealer {
+					height: 100%;
+					img {
+						width: 100%;
+						&.original {
+							display: none;
+						}
+					}
+					.changeImage {
+						display: block;
+					}
+				}
+			}
+		}
+	}
+}
+
+@media (max-width: 767px) and (min-width: 320px) {
+	#home {
+		section {
+			&#paintingExample {
+				#imageRevealer {
+					img {
+						width: 100%;
+						height: 220px;
+					}
+				}
+			}
+		}
+	}
+}
+
+
+@media (max-width: 767px) {
+	#home {
+		margin-top: 0px;
+		section {
+			&#slogan {
+				h1 {
+					position: relative;
+				    width: 100%;
+				    margin: 0 auto;
+				    left: initial;
+				    top:initial;
+				    margin-bottom: 30px;
+				    font-size: 28px;
+				    line-height: 38px;
+				    text-align: center;
+				}
+			}
+			&#introduction {
+				padding: 40px 0;
+				p {
+					font-size: 15px;
+					line-height: 25px;
+					margin-bottom: 15px;
+				}
+			}
+			&#paintingExample {
+				#imageRevealer {
+					position: relative;
+				}
+				.caption {
+					margin-bottom: 50px;
+					p {
+						font-size: 15px;
+					}
+				}
+			}
+			&#enticeExamples {
+				margin: 10px 0;
+				.fadedMemories,
+				.lovedTogether {
+					background-size: 100%;
+					height: 270px;
+					.innerContent {
+						width: 100%;
+						margin-top: 200px!important;
+						text-align: center;
+					}
+				}
+				.textSection {
+					h3 {
+						font-size: 28px;
+						line-height: 38px;
+						margin-bottom: 20px;
+					}
+				}
+				.notmobile {
+					display: none;
+				}
+			}
+			&.largeImageWithText {
+				display: none;
+				&#madewithlove {
+					display: block;
+					background-size: cover; 
+					margin-top: 50px;
+					h3 {
+						font-size: 28px;
+						line-height: 38px;
+						margin-bottom: 20px;
+					}
+					p {
+						font-size: 15px;
+						line-height: 25px;
+					}
+				}
+			}
+			&#how-does-it-work {
+				padding: 20px 0;
+				h3 {
+					font-size: 28px;
+					line-height: 38px;
+					margin-bottom: 20px;
+				}
+				.step {
+					width: 100%;
+					margin: 20px 0;
+					padding: 0;
+				}
+			}
+		}
+	}
+}

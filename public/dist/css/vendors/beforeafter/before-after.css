@@ -1,0 +1,25 @@
+.ba-bg {
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 0; }
+
+.ba-caption {
+  position: absolute;
+  bottom: 5px;
+  right: 10px;
+  z-index: 120;
+  color: #fff;
+  text-align: center;
+  padding: 10px;
+  font-size: 14px;
+  font-family: 'Glegoo', arial, sans-serif;
+  background: rgba(0, 0, 0, 0.3); }
+
+.ba-mask {
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 100;
+  border-right: 1px solid #FFF;
+  overflow: hidden; }

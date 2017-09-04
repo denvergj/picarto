@@ -1,0 +1,237 @@
+html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, acronym, address, big, cite, code, del, dfn, em, img, ins, kbd, q, s, samp, small, strike, strong, sub, sup, tt, var, b, u, i, center, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td, article, aside, canvas, details, embed, figure, figcaption, footer, header, hgroup, menu, nav, output, ruby, section, summary, time, mark, audio, video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font: inherit;
+  vertical-align: baseline; } 
+* {
+	outline: none;
+	box-sizing: border-box;
+	&:not(.select2-drop),
+	input,
+	&:not(.icheckbox_square-red) {
+// 		transition: all 0.5s ease;
+	}
+} 
+/* HTML5 display-role reset for older browsers */
+
+article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, section {
+  display: block; } 
+
+body {
+  line-height: 1; 
+  &.ajax {
+    .bluelay {
+	    width: 100%;
+	    height: 100%;
+	    opacity: .7;
+	    background: #081E44;
+	    z-index: 99999;
+	    display: block;
+	    position: fixed;
+    }
+  } 
+  .bluelay {
+	  display: none;
+  }
+}
+
+ol, ul { 
+  list-style: none; }
+
+blockquote, q {
+  quotes: none; }
+
+blockquote {
+  &:before, &:after {
+    content: '';
+    content: none; } }
+
+q {
+  &:before, &:after {
+    content: '';
+    content: none; } }
+
+table {
+  border-collapse: collapse;
+  border-spacing: 0; }
+
+.clearfix:before {
+	visibility: hidden; 
+	display: block;
+	font-size: 0;
+	content: " ";
+	clear: both;
+	height: 0;
+} 
+.clearfix:after {
+	visibility: hidden; 
+	display: block;
+	font-size: 0;
+	content: " ";
+	clear: both;
+	height: 0;
+} 
+
+body,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+span,
+ul,
+a {
+//  	font-family: $primary-font; 
+}
+
+a { 
+	cursor: pointer;
+}
+a {
+	&.btn {
+		&:hover {
+			color: #fff!important;
+		}
+		&.cancel {
+			color: #000;
+			&:hover {
+				color: #000!important;
+			}
+		}
+	}
+}
+p {
+	font-family: $primary-font;
+	font-size: 18px;
+	line-height: 22px;
+}
+
+input {
+	-webkit-appearance: none!important;
+}
+
+strong {
+}
+
+.pac-container:after {
+    /* Disclaimer: not needed to show 'powered by Google' if also a Google Map is shown */
+    background-image: none !important;
+    height: 0px;
+}
+
+form {
+	input,
+	textarea {
+		border: none;
+		transition: all 0.5s ease;
+	}
+}
+
+
+/*
+@media (min-width:640px) and (max-width:767px) {
+	p {
+		font-size: 24px;
+		line-height: 30px;
+	}
+}
+*/
+
+strong {
+	font-family: $primary-font-bold;
+}
+
+.reduce-space {
+	margin-top:-20px;
+}
+
+.selectric {
+	.label {
+		font-family: $primary-font;
+		font-size: 14px;
+	}
+}
+.selectric-items ul li {
+	font-family: $primary-font;
+	font-size: 14px;
+}
+
+/* Hamburger Settings */
+$hamburger-layer-width: 30px;
+$hamburger-layer-height:5px;   
+$hamburger-layer-color: #fff;
+
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+	font-family: $primary-font-bold;
+}
+h2 {  
+	font-size: 30px;
+	line-height: 34px;
+}
+h3 {
+	font-size: 20px;
+	line-height: 24px;
+}
+a {
+	color: $primary-color;
+	font-family: $primary-font;
+	font-size: 14px;
+	display: block;
+	text-decoration: none;
+	i {
+		font-size: 12px;
+	}
+	&:hover {
+		text-decoration: underline;
+	}
+}
+img {
+	max-width: 100%;
+}
+
+
+
+textarea,
+input[type="text"] {
+	font-family: $primary-font!important;
+}
+
+
+
+h1 {
+	color: #d94b77;
+	font-family: $primary-font;
+	font-size: 42px;
+	line-height: 56px;
+}
+p {
+	font-size: 15px;
+	font-family: $primary-font;
+	color:#40393d;
+}
+a {
+	color:#40393d;
+}
+
+
+.mobile {
+	display: none;
+}
+@media (max-width: 767px) {
+	.desktop {
+		display: none;
+	}	
+	.mobile {
+		display: block;
+	}
+}

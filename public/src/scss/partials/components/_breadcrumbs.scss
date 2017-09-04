@@ -1,0 +1,28 @@
+.page-template-archive-real-estates  {
+	.breadcrumbs {
+	    max-width: 100%;
+		padding-left: 50px;
+	}
+}
+.breadcrumbs {
+	padding: 20px 10px;
+	font-family: $primary-font;
+	color: $primary-color;
+	font-size: 14px;
+	a,
+	span {
+		display: inline-block;
+		color: $primary-color;
+		vertical-align: top;
+		font-family: $primary-font;
+	}
+	span {
+		margin: 0 5px;
+		color:#9B9B9B;
+	}
+	a {
+		&:hover {
+			text-decoration: none;
+		}
+	}
+}

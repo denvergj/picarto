@@ -1,0 +1,129 @@
+footer {
+	overflow: hidden;
+	clear: both;
+	&.content-container {
+		padding: 60px 20px;
+	}
+	hr {
+		clear: both;
+		margin: 40px 0 30px;
+		margin-bottom: 40px;
+		border: 1px solid #e6e6e6;
+	}
+	.paymentMethods {
+		vertical-align: top;
+		display: inline-block;
+	    float: right;
+		margin-top: -40px;
+	}
+	.footerText {
+		float: left;
+		width: 65%;
+		h3 { 
+			font-family: $primary-font;
+			font-size: 42px;
+			margin-bottom: 25px;
+			color: #d94b77;
+		}
+	}
+	#mc_embed_signup {
+		clear: both;
+		float: left;
+		form {
+			p {
+				font-size: 14px;
+			}
+			input {
+				font-family: $primary-font;
+				&.email {
+					color: #aaaaaa;
+				    padding: 10px 20px;
+				    margin: 0 10px 0 0;
+				    background: #fff;
+				    border: 1px solid #f0f0f0;
+				    font-size: 14px; 
+				    width: 280px;
+			    }
+			    &.button {
+				    background: #ffce49;
+					padding: 11px 50px;
+					border-radius: 3px;
+					cursor: pointer;
+					font-size: 14px;
+					font-family: $primary-font-bold;
+					&:hover {
+						background: #fed976;
+					}
+			    }
+			}
+		}
+	}
+	.social {
+	    float: left;
+		margin-top: -20px;
+	}
+	.copyright {
+		font-family: $primary-font;
+		font-size: 14px;
+		float: right;
+		color: #999196;
+		span {
+		    position: relative;
+			top: 3px;
+		}
+	}
+}
+
+@media (max-width: 960px) {
+	footer {
+		.paymentMethods {
+			width: 30%; 
+		}
+	}
+}
+
+@media (max-width: 767px) {
+	footer {
+		.paymentMethods {
+			width: 100%;
+			margin-bottom: 20px;
+		}
+		.footerText {
+			width: 100%;
+			h3 {
+				font-size: 28px;
+				line-height: 38px;
+				margin-bottom: 20px;
+			}
+			p {
+				font-size: 15px;
+				line-height: 25px;
+			}
+		}
+		#mc_embed_signup {
+			float: none;
+			form {
+				input {
+					&.email,
+					&.button {
+						width: 100%;
+						margin-top: 20px;
+					}
+				}
+			}
+		}
+		hr {
+			margin: 30px 0 40px 0;
+		}
+		.social {
+			float: none;
+			text-align: center;
+			margin-bottom: 30px;
+		}
+		.copyright {
+			float: left;
+		    width: 100%;
+		    text-align: center;
+		}
+	}
+}

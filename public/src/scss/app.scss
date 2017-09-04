@@ -1,0 +1,43 @@
+// Vendors
+@import "vendors/fontawesome/font-awesome";
+@import "vendors/simplelineicons/simple-line-icons";
+@import "vendors/ionicons/ionicons";
+@import "vendors/hamburgers/_hamburgers"; 
+@import "vendors/slick/slick"; 
+@import "vendors/selectric/selectric"; 
+@import "vendors/featherlight/featherlight";  
+@import "vendors/icheckbox/square/_all";  
+@import "vendors/pickadate/default"; 
+@import "vendors/pickadate/default"; 
+@import "vendors/pickadate/default.date"; 
+@import "vendors/pickadate/default.time"; 
+@import "vendors/beforeafter/before-after"; 
+
+// Fonts
+@import "_fonts"; 
+
+// Mixins
+@import "_mixins";
+
+@import "_settings";
+@import "_structure";
+@import "_reset"; 
+@import "_keyframes"; 
+@import "_ajaxLoaders";
+@import "_light-modal";
+@import "_cropper";
+
+// Components
+@import "partials/components/_buttons"; 
+@import "partials/components/_breadcrumbs"; 
+@import "partials/components/_pagination"; 
+
+// Re-usables
+@import "partials/header/_site-header";
+@import "partials/footer/_site-footer";
+
+// Pages
+@import "partials/pages/home";
+
+// Forms
+@import "partials/forms/normal-form"; 

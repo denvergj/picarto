@@ -1,0 +1,63 @@
+@mixin button($background, $width:auto, $display:null) {
+ 	padding: 10px;
+	border-radius: 5px;
+	-moz-border-radius: 5px;
+	-ms-border-radius: 5px;
+	background: #ffce48;
+	font-family: $primary-font-bold;
+	color: #40393d;
+	width: $width;
+	display: $display;
+	text-decoration: none;
+	text-align: center;
+	&:hover {
+		background: #fed976;
+		text-decoration: none;
+		color: #40393d;
+	}
+}
+
+@mixin clearButton($width, $color) {
+ 	padding: 10px;
+	border-radius: 5px;
+	-moz-border-radius: 5px;
+	-ms-border-radius: 5px;
+	border: 2px solid $color;
+	background: none;
+	color: $color;
+	text-decoration: none;
+	font-family: $primary-font;
+	width: $width;
+	display: block;
+	text-align: center;
+	margin: 0 auto;
+	clear: both;
+	$textColour: null;
+	@if $color == #3f3f3f {
+		$textColour: #fff;
+    } @else {
+       $textColour: #3f3f3f;
+    }
+	&:hover {
+		background: $color;
+		color:$textColour;
+	}
+	@media (max-width: 767px) {
+		box-sizing: border-box;
+		width: 95%;
+	}
+}
+
+.btn {
+	@include button($primary-color);
+	&.white {
+		background: #fff;
+		color:$primary-color;
+	}
+	a { 
+		@include button($primary-color);
+	}
+}
+.clear-button {
+	@include clearButton(20%, #3f3f3f);
+}

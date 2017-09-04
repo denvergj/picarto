@@ -1,0 +1,27 @@
+.pagination {
+	text-align: center;
+	margin: 5px 0 80px 0;
+	a,
+	span {
+		font-family: $primary-font;
+		padding: 7px 0;
+		background: none;
+		color: $primary-color;
+		display:inline-block;
+		margin-right: 5px;
+		text-decoration: none;
+		font-size: 14px;
+		&.current {
+			color: $midnight-blue;	
+		}
+		&.next,
+		&.prev {
+			background: none;
+			padding: 0px;
+			i {
+				font-size: 12px;
+				font-weight: 300;
+			}
+		}
+	}
+}
