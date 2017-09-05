@@ -19,7 +19,6 @@ keystone.init({
 	'favicon': 'public/favicon.ico',
 	'views': 'templates/views',
 	'view engine': '.hbs',
-	'cloudinary config': 'cloudinary://494561111212487:00WBcD4SlSWHFXTSiMKaZl_qMao@picarto',
 	'custom engine': handlebars.create({
 		layoutsDir: 'templates/views/layouts',
 		partialsDir: 'templates/views/partials',
@@ -35,6 +34,10 @@ keystone.init({
 	'auth': true,
 	'user model': 'User',
 });
+
+keystone.set(
+	'cloudinary config', { cloud_name: 'picarto', api_key: '494561111212487', api_secret: '00WBcD4SlSWHFXTSiMKaZl_qMao' }
+);
 
 // Load your project's Models
 keystone.import('models');
