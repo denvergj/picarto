@@ -35,8 +35,8 @@ var routes = {
 exports = module.exports = function (app) {
 	// Views
 	app.get('/', routes.views.index);
-	app.get('/stories/:category?', routes.views.blog);
-	app.get('/stories/post/:post', routes.views.post);
+	app.get('/stories/:category?', routes.views.stories);
+	app.get('/stories/:post', routes.views.post);
 	app.get('/gallery', routes.views.gallery);
 	app.all('/contact', routes.views.contact);
 

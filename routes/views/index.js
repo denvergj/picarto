@@ -21,7 +21,7 @@ exports = module.exports = function(req, res) {
             locals.data.home = results;
             next(err);
         });
-
+		
     });
 	
     // Render the view

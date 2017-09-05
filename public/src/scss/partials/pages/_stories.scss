@@ -1,0 +1,101 @@
+#stories-page{
+	margin-top: 40px;
+	article {
+		h2 {
+			text-align: center;
+			font-family: $primary-font;
+			font-size: 42px;
+			color:#d94b77;
+		}
+		p {
+			&.date {
+				text-align: center;
+				font-family: $primary-font;
+				font-size: 15px;
+				margin: 20px 0 80px 0;
+				color: #808080;
+				text-transform: uppercase;
+			}
+		}
+		img {
+			&.featured {
+				margin-bottom: 50px;
+			}
+		}
+		.content {
+			max-width: 740px;
+			margin: 0 auto;
+			&.text {
+				margin-bottom: 50px;
+			}
+			&.original {
+				.the-og {
+					display: inline-block;
+					vertical-align: top;
+					border-top: 1px solid #d94b77;
+					width: 32%;
+					padding-top: 5px;
+					font-family: $primary-font;
+					font-size: 15px;
+				}
+				img {
+					display: inline-block;
+					vertical-align: top;
+					width: 64%;
+					margin-left: 2%;
+				}
+			}
+			p {
+				font-size: 15px; 
+				line-height: 25px;
+				color: #40393d;
+			}
+		}
+	}
+	.splitter {
+		height: 1px;
+	    width: 100%;
+	    margin-bottom: 100px;
+		margin-top: 100px;
+	    position: relative;
+	    background: #ededed;
+	    img {
+		    position: absolute;
+		    top: -10px;
+		    left: 50%;
+		    margin-left: -13px;
+	    }
+	}
+}
+
+@media (max-width: 767px) {
+	#stories-page {
+		margin-top: 0px;
+		.content-container {
+			padding: 0;
+		}
+		article {
+			h2 {
+				font-size: 28px;
+				line-height: 38px;
+				margin-bottom: 20px;
+			}
+			img {
+				&.featured {
+					margin-bottom: 30px;
+				}
+			}
+			p {
+				&.date {
+					margin-bottom: 30px;
+				}
+			}
+			.content {
+				padding: 0 20px;
+				&.text {
+					margin-bottom: 30px;
+				}
+			}
+		}
+	}
+}

@@ -8995,10 +8995,13 @@ footer {
       font-size: 26px;
       line-height: 40px;
       margin-bottom: 80px; }
+      #home section#introduction p:nth-child(2) {
+        margin-bottom: 0; }
     #home section#introduction a.btn {
       max-width: 200px;
       margin: 0 auto;
-      padding: 20px; }
+      padding: 20px;
+      line-height: 14px; }
   #home section#paintingExample #imageRevealer {
     max-width: 920px;
     height: 568px;
@@ -9030,8 +9033,11 @@ footer {
     #home section#paintingExample .caption a {
       font-family: "Glegoo-Bold", sans-serif;
       margin-top: 30px; }
-      #home section#paintingExample .caption a i {
-        font-size: 15px; }
+      #home section#paintingExample .caption a:after {
+        content: "\e079";
+        font-family: 'simple-line-icons';
+        font-size: 15px;
+        display: inline-block; }
   #home section#enticeExamples {
     margin: 150px 0 50px 0;
     overflow: hidden; }
@@ -9045,10 +9051,10 @@ footer {
       #home section#enticeExamples .textSection p {
         font-size: 16px; }
     #home section#enticeExamples .fadedMemories {
-      background: url("/dist/imgs/black-to-colour.jpg") no-repeat;
       height: 340px;
       background-size: 54%;
-      background-position: 93% 0%; }
+      background-position: 93% 0%;
+      background-repeat: no-repeat; }
       #home section#enticeExamples .fadedMemories .innerContent {
         margin: 116px 0 0 0% !important;
         text-align: left;
@@ -9058,14 +9064,15 @@ footer {
       background: url("/dist/imgs/timeless-photos.jpg") no-repeat;
       background-size: 53%;
       background-position: top left;
-      height: 340px; }
+      height: 340px;
+      background-repeat: no-repeat; }
       #home section#enticeExamples .lovedTogether .innerContent {
         margin: 116px 0 0 0% !important;
         text-align: left;
         width: 41%;
         float: right; }
   #home section.largeImageWithText {
-    max-width: 1100px;
+    max-width: 1300px;
     margin: 0 auto; }
     #home section.largeImageWithText#married .content, #home section.largeImageWithText#madewithlove .content {
       padding: 15% 0; }
@@ -9089,8 +9096,11 @@ footer {
       #home section.largeImageWithText .content a {
         font-family: "Glegoo-Bold", sans-serif;
         margin-top: 30px; }
-        #home section.largeImageWithText .content a i {
-          font-size: 15px; }
+        #home section.largeImageWithText .content a:after {
+          content: "\e079";
+          font-family: 'simple-line-icons';
+          font-size: 15px;
+          display: inline-block; }
   #home section#how-does-it-work {
     padding: 180px 0;
     text-align: center; }
@@ -9205,6 +9215,75 @@ footer {
         width: 100%;
         margin: 20px 0;
         padding: 0; } }
+
+#stories-page {
+  margin-top: 40px; }
+  #stories-page article h2 {
+    text-align: center;
+    font-family: "Glegoo", sans-serif;
+    font-size: 42px;
+    color: #d94b77; }
+  #stories-page article p.date {
+    text-align: center;
+    font-family: "Glegoo", sans-serif;
+    font-size: 15px;
+    margin: 20px 0 80px 0;
+    color: #808080;
+    text-transform: uppercase; }
+  #stories-page article img.featured {
+    margin-bottom: 50px; }
+  #stories-page article .content {
+    max-width: 740px;
+    margin: 0 auto; }
+    #stories-page article .content.text {
+      margin-bottom: 50px; }
+    #stories-page article .content.original .the-og {
+      display: inline-block;
+      vertical-align: top;
+      border-top: 1px solid #d94b77;
+      width: 32%;
+      padding-top: 5px;
+      font-family: "Glegoo", sans-serif;
+      font-size: 15px; }
+    #stories-page article .content.original img {
+      display: inline-block;
+      vertical-align: top;
+      width: 64%;
+      margin-left: 2%; }
+    #stories-page article .content p {
+      font-size: 15px;
+      line-height: 25px;
+      color: #40393d; }
+  #stories-page .splitter {
+    height: 1px;
+    width: 100%;
+    margin-bottom: 100px;
+    margin-top: 100px;
+    position: relative;
+    background: #ededed; }
+    #stories-page .splitter img {
+      position: absolute;
+      top: -10px;
+      left: 50%;
+      margin-left: -13px; }
+
+@media (max-width: 767px) {
+  #stories-page {
+    margin-top: 0px; }
+    #stories-page .content-container {
+      padding: 0; }
+    #stories-page article h2 {
+      font-size: 28px;
+      line-height: 38px;
+      margin-bottom: 20px; }
+    #stories-page article img.featured {
+      margin-bottom: 30px; }
+    #stories-page article p.date {
+      margin-bottom: 30px; }
+    #stories-page article .content {
+      padding: 0 20px; }
+      #stories-page article .content.text {
+        margin-bottom: 30px; } }
 
 ::-moz-focus-inner {
   border: 0;

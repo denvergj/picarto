@@ -29,7 +29,7 @@ keystone.init({
 	}).engine,
 
 	'emails': 'templates/emails',
-
+	'wysiwyg menubar': true,
 	'auto update': true,
 	'session': true,
 	'auth': true,
@@ -52,6 +52,7 @@ keystone.set('locals', {
 // Load your project's Routes
 keystone.set('routes', require('./routes'));
 
+keystone.set('cookie secret', process.env.COOKIE_SECRET);
 
 // Configure the navigation bar in Keystone's Admin UI
 keystone.set('nav', {

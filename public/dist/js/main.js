@@ -88,4 +88,5 @@ $(function(){
 			$(this).text(txt);
 		}); 
 	}
+	
 });   

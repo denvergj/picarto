@@ -1,0 +1,31 @@
+<div id="stories-page">
+	<div class="content-container">
+		{{# each data.posts.results}}
+			<article class="story">
+				<h2>{{{title}}}</h2>
+				<p class="date">{{formattedDate}}</p>
+				{{#if featuredImage}}
+					<img src="{{{cloudinaryUrl featuredImage crop='fit'}}}" class="featured">
+				{{/if}}
+				{{#if content.text}}
+					<div class="content text">
+						{{{content.text}}}
+					</div>
+				{{/if}}
+				{{#if content.originalImage}}
+					<div class="content original">
+						<div class="the-og">
+							<p>ORIGINAL</p>
+						</div>
+						<img src="{{{cloudinaryUrl content.originalImage crop='fit'}}}" class="original">
+					</div>
+				{{/if}}
+			</article>
+			{{#if data.posts.results.length}}
+				<div class="splitter">
+					<img src="/dist/imgs/splitter.jpg" />
+				</div>
+			{{/if}}
+		{{/each}}
+	</div>
+</div>
