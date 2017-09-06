@@ -1,0 +1,219 @@
+#contact-page {
+	h1 {
+		text-align: center;
+		margin-bottom: 20px;
+		font-family: $primary-font;
+	}
+	p {
+		font-size: 20px;
+		color: #333333;
+		text-align: center;
+		a {
+			display: inline-block;
+			position: relative;
+			font-size: 20px;
+			&:after {
+				content: '';
+				border-bottom: 2px dashed #d94b77;
+			    height: 6px;
+			    width: 100%;
+			    position: absolute;
+			    left: 0;
+			    bottom: -3px;
+			}
+			&:hover {
+				text-decoration: none;
+				&:after {
+					border-bottom: 2px solid #d94b77;
+				}
+			}
+		}
+	}
+	form {
+		max-width: 560px;
+		margin: 40px auto;
+		font-family: $primary-font;
+		p {
+			display: inline;
+			text-align: left;
+			line-height: 33px;
+			&.moved {
+				position: relative;
+				top: -11px;
+			}	
+		}
+		.form-field {
+			display: inline;
+			.selectric-wrapper {
+				display: inline-block;
+				margin-bottom: 15px;
+				.selectric {
+					background: #fff;
+				    border: none;
+				    border-bottom: 1px solid #999;
+				    font-size: 20px;
+					.label {
+						font-size: 18px;
+					    text-align: left;
+					    padding-left: 0;
+					    margin: 0 34px 0 0;
+					}
+					.button {
+						width: 18px;
+					}
+				}
+			}
+		}
+		.form-group {
+			&.textarea {
+				margin: 30px 0;
+			}
+		}
+		.form-actions {
+			margin: 40px 0;
+		    position: relative;
+		    clear: both;
+		    font-size: 20px;
+		    display: block;
+			button {
+				float: right;
+			    padding: 10px 50px;
+			    font-size: 16px;
+			}
+		}
+		input {
+			&[type="text"],
+			&[type="email"] {
+				font-size: 20px;
+				border-bottom: 1px solid #999999;
+				height: 30px;
+				font-family: $primary-font;
+			}
+		}
+		textarea {
+			width: 100%;
+		    background: #fafafa;
+		    padding: 20px;
+		    font-size: 15px;
+		    border: 2px solid #e6e6e6;
+		    border-radius: 5px;
+		}
+	}
+	.splitter {
+		height: 1px;
+	    width: 100%;
+	    margin-bottom: 150px;
+		margin-top: 200px;
+	    position: relative;
+	    background: #ededed;
+	    img {
+		    position: absolute;
+		    top: -10px;
+		    left: 50%;
+		    margin-left: -13px;
+	    }
+	}
+	.call-us {
+		text-align: center;
+		h3 {
+			text-align: center;
+			font-size: 26px;
+			color: #d94b77;
+		    max-width: 640px;
+		    margin: 0 auto;
+		    line-height: 36px;
+		    font-family: $primary-font;
+		}
+		.number {
+		    width: 35%;
+		    margin: 100px 0;
+			display: inline-block;
+			text-align: center;
+			p {
+				font-size: 12px;
+			}
+			a {
+				display: inline-block;
+				position: relative;
+				font-size: 26px;
+				&:after {
+					content: '';
+					border-bottom: 2px dashed #d94b77;
+				    height: 6px;
+				    width: 100%;
+				    position: absolute;
+				    left: 0;
+				    bottom: -3px;
+				}
+				&:hover {
+					text-decoration: none;
+					&:after {
+						border-bottom: 2px solid #d94b77;
+					}
+				}
+			}
+		}
+	}
+}
+
+@media (max-width: 767px) {
+	#contact-page {
+		p {
+			font-size: 16px;
+			line-height: 26px;
+			a {
+				font-size: 16px;
+				line-height: 26px;	
+			}
+		}
+		form {
+			max-width: 320px;
+			p {
+				&.moved {
+					top: 0;
+				}
+				&.mobile-move {
+					top: -11px;
+				}
+			}
+			.form-field {
+				.selectric-wrapper {
+					.selectric {
+						.label {
+							font-size: 16px;
+						}
+					}
+				}
+			}
+			input {
+				&[type="text"],
+				&[type="email"] {
+					font-size: 16px;
+				}
+				&[type="text"] {
+					max-width: 180px;
+				}
+				&[type="email"] {
+					width: 100%;
+				}
+			}
+			.form-actions {
+				button {
+					width: 100%;
+				}
+			}
+		}
+		.splitter {
+			margin: 140px 0 50px;
+		}
+		.call-us {
+			h3 {
+				font-size: 20px;
+			}
+			.number {
+				width: 100%;
+				margin: 30px 0;
+			}
+		}
+	}	
+}

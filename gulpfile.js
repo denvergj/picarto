@@ -54,6 +54,8 @@ gulp.task('scripts', function(){
   return gulp.src([
   		'public/src/js/vendors/jquery.min.js',
   		'public/src/js/vendors/before-after.min.js',
+  		'public/src/js/vendors/selectric/jquery.selectric.js',
+  		'public/src/js/vendors/dropzone/dist/dropzone.js',
   		'public/src/js/app/*.js' 
   	])
   	.pipe(plumber({

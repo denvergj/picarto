@@ -8,7 +8,20 @@ $(function(){
 			$(this).parent().children('img.original').toggle();
 			$(this).parent().children('img.new').toggle();
 			$(this).text(txt);
-		}); 
+		});  
 	}
+	
+	$('select').selectric(); 
+	
+/*
+	
+	var myDropzone = new Dropzone(document.getElementById('dropzone-area'), {
+    	uploadMultiple: false,
+    	acceptedFiles:'.jpg,.png,.jpeg,.gif',
+    	parallelUploads: 6,
+    	url: 'https://api.cloudinary.com/v1_1/cloud9/image/upload'
+    });
+*/
+	
 	
 });   

@@ -1,44 +1,62 @@
-<div class="container">
-	<h1>Contact Us</h1>
-</div>
-<div class="container">
-	<div class="row">
-		<div class="col-sm-8 col-md-6">
-			{{#if enquirySubmitted}}
-			<h3>Thanks for getting in touch.</h3>
-			{{else}}
+<div id="contact-page">
+	<div class="content-container">
+		
+		{{#if enquirySubmitted}}
+			<h1>Thanks for getting in touch.</h1>
+		{{else}}
+			<h1>Let's chat</h1>
+			<p>Check out our <a href="">FAQ</a> or fill this out so we can learn more about you and your needs.</p>
 			<form method="post">
 				<input type="hidden" name="action" value="contact">
-				<div class="form-group {{#if validationErrors.name}}has-error{{/if}}">
-					<label>Name</label>
-					<input type="text" name="name.full"  class="form-control" value="{{formData.[name.full]}}">
+				<p>My name is</p> 
+				<div class="form-field {{#if validationErrors.name}}has-error{{/if}}">
+					<input type="text" name="name.full" placeholder="Your name" class="" value="{{formData.[name.full]}}">
 				</div>
-				<div class="form-group {{#if validationErrors.email}}has-error{{/if}}">
-					<label>Email</label>
-					<input type="email" name="email" class="form-control" value="{{formData.email}}">
-				</div>
-				<div class="form-group">
-					<label>Phone</label>
-					<input type="text" name="phone" placeholder="(optional)" class="form-control" value="{{formData.phone}}">
-				</div>
-				<div class="form-group {{#if validationErrors.enquiryType}}has-error{{/if}}">
-					<label>What are you contacting us about?</label>
+				<p> and I'm interested</p> 
+				<p class="moved"> in getting an </p> 
+				<div class="form-field {{#if validationErrors.enquiryType}}has-error{{/if}}">
 					<select name="enquiryType" class="form-control">
-						<option value="">(select one)</option>
 						{{#each enquiryTypes}}
-						<option value="{{value}}">{{label}}</option>
+							<option value="{{value}}">{{label}}</option>
 						{{/each}}
 					</select>
 				</div>
-				<div class="form-group {{#if validationErrors.message}}has-error{{/if}} ">
-					<label>Message</label>
-					<textarea name="message" placeholder="Leave us a message..." rows="4" class="form-control">{{formData.message}}</textarea>
+				<p class="moved mobile-move"> done. Here is the images(s) that I would like to have turned into a painting:</p>
+				
+
+				
+				<div class="form-group textarea {{#if validationErrors.message}}has-error{{/if}}">
+					<textarea name="message" placeholder="Please enter comments..." rows="4" class="form-control">{{formData.message}}</textarea>
 				</div>
+				
+				<div class="form-group">
+					<p>You can reach me at </p>
+					<div class="form-field {{#if validationErrors.email}}has-error{{/if}}">
+						<input type="email" name="email" placeholder="Your email" class="form-control" value="{{formData.email}}">
+					</div>
+				</div>
+				
 				<div class="form-actions">
-					<button type="submit" class="btn btn-primary">Send</button>
+					<button type="submit" class="btn btn-primary">SEND</button>
 				</div>
 			</form>
-			{{/if}}
-		</div>
+			
+			<div class="splitter">
+				<img src="/dist/imgs/splitter.jpg" />
+			</div>
+			
+			<div class="call-us">
+				<h3>Or if you would like to give us a call, that’s cool too!</h3>
+				<div class="number">
+					<p>AUSTRALIA</p>
+					<a href="tel:1300 476 407">1300 476 407</a>
+				</div>
+				<div class="number">
+					<p>INTERNATIONAL</p>
+					<a href="tel:(+61) 0424 231 52">(+61) 0424 231 529</a>
+				</div>
+			</div>
+			
+		{{/if}}
 	</div>
 </div>

@@ -12,6 +12,7 @@
 @import "vendors/pickadate/default.date"; 
 @import "vendors/pickadate/default.time"; 
 @import "vendors/beforeafter/before-after"; 
+@import "../js/vendors/dropzone/dist/dropzone"; 
 
 // Fonts
 @import "_fonts"; 
@@ -31,6 +32,7 @@
 @import "partials/components/_buttons"; 
 @import "partials/components/_breadcrumbs"; 
 @import "partials/components/_pagination"; 
+@import "partials/components/_flashmessages"; 
 
 // Re-usables
 @import "partials/header/_site-header";
@@ -39,6 +41,7 @@
 // Pages
 @import "partials/pages/home";
 @import "partials/pages/stories";
+@import "partials/pages/contact";
 
 // Forms
 @import "partials/forms/normal-form"; 
