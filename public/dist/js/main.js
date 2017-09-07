@@ -3223,6 +3223,10 @@ $(function(){
 	
 	$('select').selectric(); 
 	
+	$(document).on('click','.hamburger',function(e){
+		$(this).toggleClass('is-active');
+		$('.popupmenu').toggleClass('is-active'); 
+	});
 /*
 	
 	var myDropzone = new Dropzone(document.getElementById('dropzone-area'), {

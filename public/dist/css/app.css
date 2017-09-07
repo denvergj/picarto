@@ -7947,6 +7947,49 @@
   border-right: 1px solid #FFF;
   overflow: hidden; }
 
+.dropzone, .dropzone * {
+  box-sizing: border-box; }
+
+.dropzone {
+  position: relative; }
+
+.dropzone .dz-preview {
+  position: relative;
+  display: inline-block;
+  width: 120px;
+  margin: 0.5em; }
+
+.dropzone .dz-preview .dz-progress {
+  display: block;
+  height: 15px;
+  border: 1px solid #aaa; }
+
+.dropzone .dz-preview .dz-progress .dz-upload {
+  display: block;
+  height: 100%;
+  width: 0;
+  background: green; }
+
+.dropzone .dz-preview .dz-error-message {
+  color: red;
+  display: none; }
+
+.dropzone .dz-preview.dz-error .dz-error-message, .dropzone .dz-preview.dz-error .dz-error-mark {
+  display: block; }
+
+.dropzone .dz-preview.dz-success .dz-success-mark {
+  display: block; }
+
+.dropzone .dz-preview .dz-error-mark, .dropzone .dz-preview .dz-success-mark {
+  position: absolute;
+  display: none;
+  left: 30px;
+  top: 30px;
+  width: 54px;
+  height: 58px;
+  left: 50%;
+  margin-left: -27px; }
+
 /*
  * The MIT License
  * Copyright (c) 2012 Matias Meno <m@tias.me>
@@ -9294,6 +9337,8 @@ header {
   overflow: hidden; }
   header #logo {
     float: left; }
+    header #logo img {
+      height: 39px; }
   header nav {
     float: right; }
     header nav li {
@@ -9311,6 +9356,8 @@ header {
           background: #fed976; }
         header nav li#orderNow a:hover {
           text-decoration: none; }
+  header .popupmenu {
+    display: none; }
 
 @media (max-width: 767px) {
   header {
@@ -9323,8 +9370,37 @@ header {
       top: 5px;
       left: 10px;
       position: relative; }
+    header .hamburger {
+      display: inline-block;
+      float: right;
+      padding: 11px 15px;
+      width: 55px; }
+      header .hamburger .hamburger-inner, header .hamburger .hamburger-inner::after, header .hamburger .hamburger-inner::before {
+        width: 30px; }
     header .navbar {
-      max-width: 180px; }
+      max-width: 139px; }
+      header .navbar li#orderNow {
+        margin-left: 0px; }
+    header .popupmenu {
+      position: fixed;
+      height: 100%;
+      width: 100%;
+      background: #fff;
+      top: 52px;
+      padding-top: 50%;
+      display: none; }
+      header .popupmenu.is-active {
+        display: block; }
+      header .popupmenu #stories,
+      header .popupmenu #contact {
+        display: block; }
+      header .popupmenu #orderNow {
+        display: none; }
+      header .popupmenu li {
+        text-align: center;
+        margin-bottom: 30px; }
+        header .popupmenu li a {
+          font-size: 24px; }
     header #stories,
     header #contact {
       display: none; } }

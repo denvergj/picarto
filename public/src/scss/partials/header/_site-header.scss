@@ -5,6 +5,9 @@ header {
     overflow: hidden;
     #logo {
 	    float: left;
+	    img {
+		   height: 39px;
+	    }
     }
     nav {
 	    float: right;
@@ -31,6 +34,9 @@ header {
 		    }
 	    }
     }
+    .popupmenu {
+	    display: none;
+    }
 }
 @media (max-width: 767px) { 
 	header {
@@ -45,8 +51,48 @@ header {
 		    left: 10px;
 		    position: relative;
 		}
+		.hamburger {
+			display: inline-block;
+		    float: right;
+		    padding: 11px 15px;
+		    width: 55px;
+		    .hamburger-inner, .hamburger-inner::after, .hamburger-inner::before {
+			    width: 30px;
+		    }
+		}
 		.navbar {
-			max-width: 180px;
+			max-width: 139px;
+			li {
+				&#orderNow {
+					margin-left: 0px;
+				}
+			}
+		}
+		.popupmenu {
+			position: fixed;
+		    height: 100%;
+		    width: 100%;
+		    background: #fff;
+		    top: 52px;
+		    padding-top: 50%;
+		    display: none;
+		    &.is-active {
+			    display: block;
+		    }
+			#stories,
+			#contact {
+				display: block;
+			}
+			#orderNow {
+				display: none;
+			}
+			li {
+				text-align: center;
+				margin-bottom: 30px;
+				a {
+					font-size: 24px;
+				}
+			}
 		}
 		#stories,
 		#contact {

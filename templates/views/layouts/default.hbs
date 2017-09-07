@@ -24,9 +24,14 @@
 			<div class="content-container">
 				<div id="logo">
 					<a href="/">
-						<img src="/dist/imgs/logo.png" alt="Picarto"/>
+						<img src="/dist/imgs/logo.svg" alt="Picarto"/>
 					</a>
 				</div>
+				<button class="hamburger hamburger--elastic mobile" type="button">
+				  <span class="hamburger-box">
+				    <span class="hamburger-inner"></span>
+				  </span>
+				</button> 
 				<nav class="navbar">
 					{{# each navLinks}}
 						<li {{#ifeq ../section key}}class="active"{{else}}{{/ifeq}} id="{{ id }}">
@@ -34,6 +39,13 @@
 						</li>
 					{{/each}}
 				</nav>
+				<div class="popupmenu">
+					{{# each navLinks}}
+						<li {{#ifeq ../section key}}class="active"{{else}}{{/ifeq}} id="{{ id }}">
+							<a href="{{ href }}">{{ label }}</a>
+						</li>
+					{{/each}}
+				</div>
 			</div>
 		</header>
 		<div id="body">
