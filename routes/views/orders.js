@@ -1,5 +1,5 @@
 var keystone = require('keystone');
-var Enquiry = keystone.list('Enquiry');
+var Orders = keystone.list('Orders');
 
 exports = module.exports = function (req, res) {
 
@@ -7,11 +7,9 @@ exports = module.exports = function (req, res) {
 	var locals = res.locals;
 
 	// Set locals
-	locals.section = 'contact';
-	locals.enquiryTypes = Enquiry.fields.enquiryType.ops;
+	locals.section = 'orders';
 	locals.formData = req.body || {};
 	locals.validationErrors = {};
-	locals.enquirySubmitted = false;
 
 	// On POST requests, add the Enquiry item to the database
 	view.on('post', { action: 'contact' }, function (next) {
@@ -35,5 +33,5 @@ exports = module.exports = function (req, res) {
 		});
 	});
 
-	view.render('contact');
+	view.render('order');
 };

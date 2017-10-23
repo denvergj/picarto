@@ -2,16 +2,16 @@ var keystone = require('keystone');
 var Types = keystone.Field.Types;
 
 /**
- * Enquiry Model
+ * Orders Model
  * =============
  */
 
-var Enquiry = new keystone.List('Enquiry', {
+var Orders = new keystone.List('Orders', {
 	nocreate: true,
 	noedit: true,
 });
 
-Enquiry.add({
+Orders.add({
 	name: { type: Types.Name, required: true },
 	email: { type: Types.Email, required: true },
 	enquiryType: { type: Types.Select, options: [
@@ -23,18 +23,18 @@ Enquiry.add({
 	createdAt: { type: Date, default: Date.now },
 });
 
-Enquiry.schema.pre('save', function (next) {
+Orders.schema.pre('save', function (next) {
 	this.wasNew = this.isNew;
 	next();
 });
 
-Enquiry.schema.post('save', function () {
+Orders.schema.post('save', function () {
 	if (this.wasNew) {
-		this.sendNotificationEmail();
+		//this.sendNotificationEmail();
 	}
 });
 
-Enquiry.schema.methods.sendNotificationEmail = function (callback) {
+Orders.schema.methods.sendNotificationEmail = function (callback) {
 	if (typeof callback !== 'function') {
 		callback = function (err) {
 			if (err) {
@@ -70,6 +70,6 @@ Enquiry.schema.methods.sendNotificationEmail = function (callback) {
 	});
 };
 
-Enquiry.defaultSort = '-createdAt';
-Enquiry.defaultColumns = 'name, email, enquiryType, createdAt';
-Enquiry.register();
+Orders.defaultSort = '-createdAt';
+Orders.defaultColumns = 'name, email, enquiryType, createdAt';
+Orders.register();

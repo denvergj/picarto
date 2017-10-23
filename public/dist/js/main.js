@@ -3208,6 +3208,8 @@ return new Za.prototype.init(a,b,c,d,e)}m.Tween=Za,Za.prototype={constructor:Za,
 
 }).call(this);
 
+Dropzone.autoDiscover = false;
+
 $(function(){
 	
 	if($(window).width() >= 1263) {
@@ -3227,15 +3229,25 @@ $(function(){
 		$(this).toggleClass('is-active');
 		$('.popupmenu').toggleClass('is-active'); 
 	});
-/*
 	
-	var myDropzone = new Dropzone(document.getElementById('dropzone-area'), {
+	var myDropzone = new Dropzone(document.getElementById('myPictures'), {
     	uploadMultiple: false,
     	acceptedFiles:'.jpg,.png,.jpeg,.gif',
     	parallelUploads: 6,
-    	url: 'https://api.cloudinary.com/v1_1/cloud9/image/upload'
+    	url: 'https://api.cloudinary.com/v1_1/cloud9/image/upload',
+    	addRemoveLinks: true
     });
-*/
-	
-	
+    
+    myDropzone.on('sending', function (file, xhr, formData) {
+		formData.append('api_key', 494561111212487);
+		formData.append('timestamp', Date.now() / 1000 | 0);
+		formData.append('upload_preset', 'enquiry');
+	});
+	myDropzone.on('success', function (file, response) {
+		file.serverId = response.version;
+		$(".dz-preview:last-child").attr('id', "document-" + file.serverId);
+		$('#document-'+file.serverId).append('<input type="hidden" name="enquiryImages[]" value="'+response.secure_url+'" />');
+	});
+    
+    
 });   

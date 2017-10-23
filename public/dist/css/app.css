@@ -9861,6 +9861,12 @@ footer {
           width: 18px; }
   #contact-page form .form-group.textarea {
     margin: 30px 0; }
+  #contact-page form .dz-error-message {
+    top: 40px; }
+  #contact-page form .dz-remove {
+    margin-top: 10px;
+    z-index: 9999;
+    position: relative; }
   #contact-page form .form-actions {
     margin: 40px 0;
     position: relative;
@@ -9961,6 +9967,10 @@ footer {
   #contact-page .call-us .number {
     width: 100%;
     margin: 30px 0; } }
+
+#ordering .entry-details {
+  width: 70%;
+  margin-right: 5%; }
 
 ::-moz-focus-inner {
   border: 0;
