@@ -7026,7 +7026,7 @@
   padding: 0;
   width: 22px;
   height: 22px;
-  background: url(blue.png) no-repeat;
+  background: url(../imgs/blue.png) no-repeat;
   border: none;
   cursor: pointer; }
 
@@ -9968,9 +9968,112 @@ footer {
     width: 100%;
     margin: 30px 0; } }
 
-#ordering .entry-details {
-  width: 70%;
-  margin-right: 5%; }
+#ordering {
+  font-family: "Glegoo", sans-serif;
+  overflow: hidden;
+  margin-bottom: 85px; }
+  #ordering #myPictures {
+    margin: 30px auto 100px auto;
+    text-align: center;
+    background: #fafafa;
+    border: 1px dashed #d0d0d0; }
+    #ordering #myPictures .dz-message {
+      padding: 20px 0; }
+    #ordering #myPictures .dz-error-message {
+      top: 40px; }
+    #ordering #myPictures .dz-remove {
+      margin-top: 10px;
+      z-index: 9999;
+      position: relative; }
+    #ordering #myPictures span {
+      font-family: "Glegoo", sans-serif;
+      display: block;
+      margin: 20px 0; }
+      #ordering #myPictures span#browse {
+        position: relative;
+        border-bottom: 2px dashed #d3135a;
+        max-width: 200px;
+        padding-bottom: 15px;
+        margin: 0 auto;
+        font-size: 21px; }
+  #ordering .entry-details {
+    width: 65%;
+    float: left; }
+    #ordering .entry-details .configurate {
+      border-bottom: 1px solid #d0d0d0;
+      display: inline-block;
+      width: 100%;
+      padding-bottom: 40px;
+      padding-top: 35px; }
+      #ordering .entry-details .configurate#medium-config {
+        padding-top: 0; }
+      #ordering .entry-details .configurate#editing-config .config-values .inputs {
+        display: inline-block;
+        margin-right: 25px; }
+      #ordering .entry-details .configurate#editing-config textarea {
+        border: 1px solid #e6e6e6;
+        border-radius: 5px;
+        background: #f8f8f8;
+        clear: both;
+        width: 100%;
+        margin-top: 25px;
+        padding: 10px;
+        min-height: 125px;
+        font-size: 14px; }
+      #ordering .entry-details .configurate .title {
+        width: 50%;
+        float: left;
+        font-size: 26px;
+        color: #d3135a;
+        margin-right: 5%; }
+        #ordering .entry-details .configurate .title span {
+          color: #666666;
+          font-size: 14px;
+          line-height: 24px;
+          display: block;
+          margin-top: 25px; }
+      #ordering .entry-details .configurate .config-values {
+        float: left; }
+        #ordering .entry-details .configurate .config-values .inputs {
+          display: block;
+          margin-bottom: 15px; }
+  #ordering .order-summary {
+    background: #fafafa;
+    float: right;
+    clear: right;
+    margin-top: -30px;
+    width: 25%;
+    font-family: "Glegoo", sans-serif; }
+    #ordering .order-summary .contain {
+      padding: 15px; }
+    #ordering .order-summary div.title {
+      font-family: "Glegoo", sans-serif;
+      border-bottom: 1px solid #e6e6e6;
+      padding-bottom: 10px; }
+    #ordering .order-summary .order-spec {
+      padding: 20px 0; }
+      #ordering .order-summary .order-spec#total {
+        border-top: 1px solid #e6e6e6;
+        margin-top: 15px; }
+        #ordering .order-summary .order-spec#total span.value {
+          font-size: 26px; }
+      #ordering .order-summary .order-spec span.title {
+        float: left; }
+      #ordering .order-summary .order-spec span.value {
+        float: right; }
+    #ordering .order-summary #checkout {
+      padding: 20px;
+      background: #ffce48; }
+
+@media (min-width: 768px) and (max-width: 968px) {
+  #ordering .order-summary {
+    width: 30%; }
+    #ordering .order-summary .order-spec {
+      font-size: 15px; }
+      #ordering .order-summary .order-spec#total span.value {
+        position: relative;
+        font-size: 25px;
+        top: -8px; } }
 
 ::-moz-focus-inner {
   border: 0;

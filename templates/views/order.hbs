@@ -3,47 +3,161 @@
 		<form>
 			<div id="order-page">
 				<div class="form-group">
-					<div id="myPictures" class="dropzone"></div>
+					<div id="myPictures" class="dropzone">
+						<div class="dz-message" data-dz-message><span>Drop your photos here or</span><span id="browse">Browse computer</span></div>
+					</div>
 	            </div>
 				<div class="entry-details">
-				
-		            <div class="order-summary">
-		            	<div class="contain">
-			            	<div class="title">
-			            		ORDER SUMMARY
-			            	</div>
-			            	<div class="order-spec" id="medium">
-			            		<span class="title">Medium</span>
-			            		<span class="value">Oil</span>
-			            	</div>
-			            	<div class="order-spec" id="colour">
-			            		<span class="title">Colour</span>
-			            		<span class="value">Colour</span>
-			            	</div>
-			            	<div class="order-spec" id="size">
-			            		<span class="title">Size</span>
-			            		<span class="value">16"x20" (40x50cm)</span>
-			            	</div>
-			            	<div class="order-spec" id="characters">
-			            		<span class="title">Characters</span>
-			            		<span class="value">1</span>
-			            	</div>
-			            	<div class="order-spec" id="editing">
-			            		<span class="title">Editing</span>
-			            		<span class="value">No</span>
-			            	</div>
-			            	<div class="order-spec" id="total">
-			            		<span class="title">Total (AUD)</span>
-			            		<span class="value">$2724</span>
-			            	</div>
-		            	</div>
-		            	<div id="checkout">
-		            		Checkout
-		            		<span class="value"> > </span>
-		            	</div>
-		            </div>
+					
+					<div class="configurate" id="medium-config">
+						<div class="title">
+							Medium
+						</div>
+						<div class="config-values">
+							<div class="inputs">
+								<input id="oil" type="radio" name="medium" value="Oil" checked/>
+								<label for="oil">Oil</label>
+							</div>
+							<div class="inputs">
+								<input id="pencil" type="radio" name="medium" value="Pencil"/>
+								<label for="pencil">Pencil</label>
+							</div>
+						</div>
+					</div>
+					
+					<div class="configurate" id="colour-config">
+						<div class="title">
+							Colour
+						</div>
+						<div class="config-values">
+							<div class="inputs">
+								<input id="colour" type="radio" name="colour" value="Colour" checked/>
+								<label for="colour">Colour</label>
+							</div>
+							<div class="inputs">
+								<input id="black-and-white" type="radio" name="colour" value="Black and white"/>
+								<label for="black-and-white">Black and white</label>
+							</div>
+						</div>
+					</div>
+					
+					<div class="configurate" id="size-config">
+						<div class="title">
+							Size
+						</div>
+						<div class="config-values">
+							<div class="inputs">
+								<select name="size">
+									<option value="16x20">16"×20" (40×50cm)</option>
+									<option value="20x24">20"x24" (50x60cm)</option>
+									<option value="30x40">30"x40" (75x100cm)</option>
+									<option value="48x72">48"x72" (100x180cm)</option>
+								</select>
+							</div>
+						</div>
+					</div>
+					
+					<div class="configurate" id="number-of-characters-config">
+						<div class="title">
+							Number of characters
+							<span>Select the total number of characters in the final painting. If you wish to remove people in your painting, please enter that in "Editing".</span>
+						</div>
+						<div class="config-values">
+							<div class="inputs">
+								<select name="size">
+									<option value="0">0</option>
+									<option value="1">1</option>
+									<option value="2">2</option>
+									<option value="3">3</option>
+									<option value="4">4</option>
+									<option value="5">5</option>
+									<option value="6">6</option>
+									<option value="7">7</option>
+									<option value="8">8</option>
+									<option value="9">9</option>
+									<option value="10">10</option>
+									<option value="11">11</option>
+									<option value="12">12</option>
+									<option value="13">13</option>
+									<option value="14">14</option>
+									<option value="15">15</option>
+								</select>
+							</div>
+						</div>
+					</div>
+					
+					<div class="configurate" id="editing-config">
+						<div class="title">
+							Editing
+							<span>Do you want anything removed or edited in the painting?</span>
+						</div>
+						<div class="config-values">
+							<div class="inputs">
+								<input id="editing-no" type="radio" name="editing" value="No" checked/>
+								<label for="editing-no">No</label>
+							</div>
+							<div class="inputs">
+								<input id="editing-yes" type="radio" name="editing" value="Yes"/>
+								<label for="editing-yes">Yes</label>
+							</div>
+						</div>
+						<textarea name="editing-notes" placeholder="Please enter comment..."></textarea>
+					</div>
+					
+					<div class="configurate" id="background-config">
+						<div class="title">
+							Background
+							<span>Would you like a highly detailed background, or a simplified background?</span>
+						</div>
+						<div class="config-values">
+							<div class="inputs">
+								<input id="detailed" type="radio" name="background" value="Detailed"/>
+								<label for="detailed">Detailed</label>
+							</div>
+							<div class="inputs">
+								<input id="simplified" type="radio" name="background" value="Simplified" checked/>
+								<label for="simplified">Simplified</label>
+							</div>
+						</div>
+					</div>
+					
 	            </div>
             </div>
+            <div class="order-summary">
+	            	<div class="contain">
+		            	<div class="title">
+		            		ORDER SUMMARY
+		            	</div>
+		            	<div class="order-spec" id="medium">
+		            		<span class="title">Medium</span>
+		            		<span class="value">Oil</span>
+		            	</div>
+		            	<div class="order-spec" id="colour">
+		            		<span class="title">Colour</span>
+		            		<span class="value">Colour</span>
+		            	</div>
+		            	<div class="order-spec" id="size">
+		            		<span class="title">Size</span>
+		            		<span class="value">16"x20" (40x50cm)</span>
+		            	</div>
+		            	<div class="order-spec" id="characters">
+		            		<span class="title">Characters</span>
+		            		<span class="value">1</span>
+		            	</div>
+		            	<div class="order-spec" id="editing">
+		            		<span class="title">Editing</span>
+		            		<span class="value">No</span>
+		            	</div>
+		            	<div class="order-spec" id="total">
+		            		<span class="title">Total (AUD)</span>
+		            		<span class="value">$2724</span>
+		            	</div>
+	            	</div>
+	            	<div id="checkout">
+	            		Checkout
+	            		<span class="value"> > </span>
+	            	</div>
+	            </div>
 		</form>		
 	</div>
 </div>

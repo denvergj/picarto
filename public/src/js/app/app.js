@@ -14,6 +14,11 @@ $(function(){
 	}
 	
 	$('select').selectric(); 
+	$('input').iCheck({
+		checkboxClass: 'icheckbox_square-blue',
+	    radioClass: 'iradio_square-blue', 
+	    increaseArea: '20%' // optional
+	});
 	
 	$(document).on('click','.hamburger',function(e){
 		$(this).toggleClass('is-active');
