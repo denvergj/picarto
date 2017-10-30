@@ -9999,18 +9999,22 @@ footer {
   #ordering .entry-details {
     width: 65%;
     float: left; }
-    #ordering .entry-details .configurate {
+    #ordering .entry-details .configurate,
+    #ordering .entry-details .sectors {
       border-bottom: 1px solid #d0d0d0;
       display: inline-block;
       width: 100%;
       padding-bottom: 40px;
       padding-top: 35px; }
-      #ordering .entry-details .configurate#medium-config {
+      #ordering .entry-details .configurate#medium-config,
+      #ordering .entry-details .sectors#medium-config {
         padding-top: 0; }
-      #ordering .entry-details .configurate#editing-config .config-values .inputs {
+      #ordering .entry-details .configurate#editing-config .config-values .inputs,
+      #ordering .entry-details .sectors#editing-config .config-values .inputs {
         display: inline-block;
         margin-right: 25px; }
-      #ordering .entry-details .configurate#editing-config textarea {
+      #ordering .entry-details .configurate#editing-config textarea,
+      #ordering .entry-details .sectors#editing-config textarea {
         border: 1px solid #e6e6e6;
         border-radius: 5px;
         background: #f8f8f8;
@@ -10020,21 +10024,25 @@ footer {
         padding: 10px;
         min-height: 125px;
         font-size: 14px; }
-      #ordering .entry-details .configurate .title {
+      #ordering .entry-details .configurate .title,
+      #ordering .entry-details .sectors .title {
         width: 50%;
         float: left;
         font-size: 26px;
         color: #d3135a;
         margin-right: 5%; }
-        #ordering .entry-details .configurate .title span {
+        #ordering .entry-details .configurate .title span,
+        #ordering .entry-details .sectors .title span {
           color: #666666;
           font-size: 14px;
           line-height: 24px;
           display: block;
           margin-top: 25px; }
-      #ordering .entry-details .configurate .config-values {
+      #ordering .entry-details .configurate .config-values,
+      #ordering .entry-details .sectors .config-values {
         float: left; }
-        #ordering .entry-details .configurate .config-values .inputs {
+        #ordering .entry-details .configurate .config-values .inputs,
+        #ordering .entry-details .sectors .config-values .inputs {
           display: block;
           margin-bottom: 15px; }
   #ordering .order-summary {
@@ -10054,16 +10062,127 @@ footer {
       padding: 20px 0; }
       #ordering .order-summary .order-spec#total {
         border-top: 1px solid #e6e6e6;
-        margin-top: 15px; }
+        margin-top: 15px;
+        padding: 30px 0; }
         #ordering .order-summary .order-spec#total span.value {
-          font-size: 26px; }
+          font-size: 26px;
+          position: relative;
+          top: -7px; }
       #ordering .order-summary .order-spec span.title {
         float: left; }
       #ordering .order-summary .order-spec span.value {
         float: right; }
     #ordering .order-summary #checkout {
       padding: 20px;
-      background: #ffce48; }
+      background: #ffce48;
+      border: none;
+      width: 100%;
+      text-align: left;
+      font-family: "Glegoo", sans-serif;
+      font-size: 17px;
+      cursor: pointer; }
+      #ordering .order-summary #checkout:hover {
+        background: #fed976; }
+      #ordering .order-summary #checkout span {
+        position: relative;
+        top: 6px;
+        float: right; }
+  #ordering #order-page {
+    display: block; }
+  #ordering #checkout-page {
+    padding-top: 50px;
+    display: none; }
+    #ordering #checkout-page #go-back {
+      cursor: pointer; }
+    #ordering #checkout-page .entry-details .sectors {
+      padding-bottom: 20px;
+      padding-top: 20px; }
+      #ordering #checkout-page .entry-details .sectors .title {
+        width: 100%;
+        cursor: pointer; }
+      #ordering #checkout-page .entry-details .sectors#billing-details .details {
+        display: block; }
+      #ordering #checkout-page .entry-details .sectors#special-requests .details .sides {
+        width: 100%; }
+        #ordering #checkout-page .entry-details .sectors#special-requests .details .sides textarea {
+          width: 100%;
+          background: #fafafa;
+          padding: 10px;
+          border: 1px solid #f0f0f0;
+          border-radius: 3px;
+          font-size: 13px;
+          min-height: 100px; }
+      #ordering #checkout-page .entry-details .sectors#special-requests .details .actions {
+        margin-top: 10px; }
+      #ordering #checkout-page .entry-details .sectors.valid .details .actions {
+        display: none; }
+      #ordering #checkout-page .entry-details .sectors .details {
+        clear: both;
+        margin-top: 25px;
+        float: left;
+        width: 100%;
+        display: none; }
+        #ordering #checkout-page .entry-details .sectors .details button {
+          cursor: pointer; }
+        #ordering #checkout-page .entry-details .sectors .details .sides {
+          width: 50%;
+          float: left;
+          padding-right: 15px; }
+          #ordering #checkout-page .entry-details .sectors .details .sides:nth-child(even) {
+            padding-right: 0; }
+          #ordering #checkout-page .entry-details .sectors .details .sides .field {
+            margin-bottom: 25px; }
+            #ordering #checkout-page .entry-details .sectors .details .sides .field label {
+              display: block;
+              margin-bottom: 10px;
+              width: 100%; }
+              #ordering #checkout-page .entry-details .sectors .details .sides .field label span {
+                color: red; }
+            #ordering #checkout-page .entry-details .sectors .details .sides .field .selectric {
+              background: #fafafa;
+              border: 1px solid #f0f0f0;
+              border-radius: 3px; }
+              #ordering #checkout-page .entry-details .sectors .details .sides .field .selectric .label {
+                font-size: 13px; }
+            #ordering #checkout-page .entry-details .sectors .details .sides .field input {
+              background: #fafafa;
+              padding: 10px;
+              border: 1px solid #f0f0f0;
+              border-radius: 3px;
+              width: 100%;
+              font-size: 13px; }
+            #ordering #checkout-page .entry-details .sectors .details .sides .field .required {
+              display: block;
+              margin-top: 10px;
+              font-size: 13px;
+              color: red; }
+        #ordering #checkout-page .entry-details .sectors .details .actions {
+          float: left;
+          clear: both;
+          width: 100%;
+          margin-top: 35px;
+          margin-bottom: 15px; }
+          #ordering #checkout-page .entry-details .sectors .details .actions .field {
+            float: left;
+            width: 65%;
+            font-size: 14px;
+            position: relative;
+            top: 15px; }
+            #ordering #checkout-page .entry-details .sectors .details .actions .field label {
+              margin-left: 5px; }
+          #ordering #checkout-page .entry-details .sectors .details .actions button {
+            float: right;
+            background: #ffce49;
+            text-align: center;
+            border-radius: 3px;
+            padding: 10px;
+            color: #000;
+            border: none;
+            padding: 10px 40px;
+            font-size: 16px;
+            font-family: "Glegoo", sans-serif; }
+            #ordering #checkout-page .entry-details .sectors .details .actions button:hover {
+              background: #fed976; }
 
 @media (min-width: 768px) and (max-width: 968px) {
   #ordering .order-summary {
@@ -10074,6 +10193,114 @@ footer {
         position: relative;
         font-size: 25px;
         top: -8px; } }
+
+@media (max-width: 767px) {
+  #ordering {
+    background: #fafafa;
+    margin-top: -40px; }
+    #ordering #myPictures {
+      margin: 30px auto 30px;
+      background: #fff; }
+      #ordering #myPictures span#browse {
+        max-width: 120px;
+        padding-bottom: 5px;
+        margin: 0 auto;
+        font-size: 17px; }
+      #ordering #myPictures .dz-message {
+        padding: 0px;
+        margin: 2.3em 0; }
+    #ordering .entry-details {
+      width: 100%; }
+      #ordering .entry-details .configurate .title {
+        width: 100%;
+        margin-bottom: 15px;
+        font-size: 20px;
+        line-height: 26px; }
+        #ordering .entry-details .configurate .title .info {
+          cursor: pointer;
+          display: inline-block; }
+          #ordering .entry-details .configurate .title .info img {
+            max-width: 30px;
+            position: relative;
+            top: 8px;
+            margin-left: 20px; }
+        #ordering .entry-details .configurate .title span {
+          display: none; }
+      #ordering .entry-details .configurate .config-values {
+        background: #fff;
+        width: 100%;
+        padding: 25px 5px; }
+        #ordering .entry-details .configurate .config-values .inputs:nth-child(even) {
+          margin-bottom: 0; }
+      #ordering .entry-details .configurate#editing-config .config-values .inputs {
+        display: block; }
+        #ordering .entry-details .configurate#editing-config .config-values .inputs:nth-child(even) {
+          margin-bottom: 0; }
+    #ordering .order-summary {
+      width: 100%;
+      position: fixed;
+      top: 51px;
+      display: none;
+      z-index: 9;
+      margin-left: -20px;
+      margin-top: 0px;
+      padding-top: 15px;
+      height: 600px; }
+      #ordering .order-summary.hittop {
+        top: 0px; }
+      #ordering .order-summary .order-spec {
+        font-size: 15px;
+        border-bottom: 1px solid #e6e6e6;
+        padding-bottom: 30px; }
+        #ordering .order-summary .order-spec#total {
+          border: none;
+          text-align: center; }
+          #ordering .order-summary .order-spec#total span {
+            float: none;
+            display: block; }
+            #ordering .order-summary .order-spec#total span.value {
+              position: relative;
+              font-size: 36px;
+              margin-bottom: 5px; }
+    #ordering .view-order {
+      position: fixed;
+      bottom: 0px;
+      z-index: 99;
+      background: #fff;
+      width: 100%;
+      margin-left: -20px;
+      font-family: "Glegoo", sans-serif; }
+      #ordering .view-order .close {
+        display: none;
+        font-size: 19px; }
+        #ordering .view-order .close img {
+          max-width: 12px;
+          margin-right: 10px; }
+      #ordering .view-order #total,
+      #ordering .view-order #checkout {
+        width: 50%;
+        float: left;
+        border-top: 1px solid #e1e1e1;
+        cursor: pointer; }
+      #ordering .view-order #total {
+        padding: 20px; }
+        #ordering .view-order #total .title img {
+          max-width: 12px; }
+        #ordering .view-order #total .value {
+          font-size: 19px;
+          margin-left: 10px; }
+      #ordering .view-order #checkout {
+        width: 50%;
+        padding: 12px 20px;
+        font-size: 18px;
+        background: #ffce48;
+        -webkit-appearance: button-bevel;
+        font-family: "Glegoo", sans-serif;
+        text-align: left; }
+        #ordering .view-order #checkout span {
+          position: relative;
+          top: 6px;
+          float: right; } }
 
 ::-moz-focus-inner {
   border: 0;

@@ -35,7 +35,8 @@
 	.entry-details {
 		width: 65%;
 		float: left;
-		.configurate {
+		.configurate,
+		.sectors {
 			border-bottom: 1px solid #d0d0d0;
 			display: inline-block;
 			width: 100%;
@@ -106,9 +107,12 @@
 			&#total {
 			    border-top: 1px solid #e6e6e6;
 				margin-top: 15px;
+				padding: 30px 0;
 				span {
 					&.value {
 						font-size: 26px;
+					    position: relative;
+						top: -7px;
 					}
 				}
 			}
@@ -124,6 +128,156 @@
 		#checkout {
 			padding: 20px;
 			background: #ffce48;
+			border: none;
+		    width: 100%;
+		    text-align: left;
+		    font-family: $primary-font;
+		    font-size: 17px;
+		    cursor: pointer;
+		    &:hover {
+			    background: #fed976;
+		    }
+			span {
+				position: relative;
+				top: 6px;
+				float: right;
+			}
+		}
+	}
+	
+	#order-page {
+		display: block;
+	}
+	
+	#checkout-page {
+		padding-top: 50px;
+		display: none;
+		#go-back {
+			cursor: pointer;
+		}
+		.entry-details {
+			.sectors {
+				padding-bottom: 20px;
+				padding-top: 20px;
+				.title {
+					width: 100%;
+					cursor: pointer;
+				}
+				&#billing-details {
+					.details {
+						display: block;
+					}
+				}
+				&#special-requests {
+					.details {
+						.sides {
+							width: 100%;
+							textarea {
+								width: 100%;
+								background: #fafafa;
+								padding: 10px;
+								border: 1px solid #f0f0f0;
+								border-radius: 3px;
+								font-size: 13px;
+								min-height: 100px;
+							}							
+						}
+						.actions {
+							margin-top: 10px;
+						}
+					}
+				}
+				&.valid {
+					.details {
+						.actions {
+							display: none;
+						}
+					}
+				}
+				.details {
+					clear: both;
+				    margin-top: 25px;
+				    float: left;
+				    width: 100%;
+				    display: none;
+				    button {
+					    cursor: pointer;
+				    }
+					.sides {
+						width: 50%;
+						float: left;
+						padding-right: 15px;
+						&:nth-child(even) {
+							padding-right: 0;
+						}
+						.field {
+							margin-bottom: 25px;
+							label {
+								display: block;
+								margin-bottom: 10px;
+								width: 100%;
+								span {
+									color: red;
+								}
+							}
+							.selectric {
+								background: #fafafa;
+								border: 1px solid #f0f0f0;
+								border-radius: 3px;
+								.label {
+									font-size: 13px;
+								}
+							}
+							input {
+								background: #fafafa;
+								padding: 10px;
+								border: 1px solid #f0f0f0;
+								border-radius: 3px;
+								width: 100%;
+								font-size: 13px;
+							}
+							.required {
+								display: block;
+							    margin-top: 10px;
+							    font-size: 13px;
+							    color: red;
+							}
+						}
+					}
+					.actions {
+					    float: left;
+					    clear: both;
+					    width: 100%;
+					    margin-top: 35px;
+					    margin-bottom: 15px;
+					    .field {
+						    float: left;
+						    width: 65%;
+						    font-size: 14px;
+						    position: relative;
+							top: 15px;	
+						    label {
+							    margin-left: 5px;
+						    }
+					    }
+					    button {
+						    float: right; 
+						    background: #ffce49;
+						    text-align: center;
+						    border-radius: 3px;
+						    padding: 10px;
+						    color: #000;
+						    border: none;
+							padding: 10px 40px;
+							font-size: 16px;
+							font-family: $primary-font;
+							&:hover {
+							    background: #fed976;
+						    }
+					    }
+					}
+				}
+			}
 		}
 	}	
 }
@@ -144,6 +298,156 @@
 					}
 				}
 			}
+		}
+	} 
+}
+
+
+@media (max-width: 767px) {
+	#ordering {
+		background: #fafafa;
+		margin-top: -40px;
+		#myPictures {
+			margin: 30px auto 30px;
+			background: #fff;
+			span {
+				&#browse {
+					max-width: 120px;
+				    padding-bottom: 5px;
+				    margin: 0 auto;
+				    font-size: 17px;
+				}
+			} 
+			.dz-message {
+				padding: 0px;
+				margin: 2.3em 0;
+			} 
+		}
+		.entry-details {
+			width: 100%;
+			.configurate {
+				.title {
+					width: 100%;
+					margin-bottom: 15px;
+					font-size: 20px;
+					line-height: 26px;
+					.info {
+						cursor: pointer;
+						display: inline-block;
+						img {
+							max-width: 30px;
+						    position: relative;
+						    top: 8px;
+						    margin-left: 20px;
+						}
+					}
+					span {
+						display: none;
+					}
+				}
+				.config-values {
+					background: #fff;
+				    width: 100%;
+				    padding: 25px 5px;
+				    .inputs {
+						&:nth-child(even) {
+							margin-bottom: 0;
+						}
+					}
+				}
+				&#editing-config {
+					.config-values {
+					    .inputs {
+							display: block;
+							&:nth-child(even) {
+								margin-bottom: 0;
+							}
+						}
+					}
+				}
+			}
+		}
+		.order-summary {
+			width: 100%;
+			position: fixed;
+			top: 51px;
+			display: none;
+			z-index: 9;
+			margin-left: -20px;
+			margin-top: 0px;
+			padding-top: 15px;
+			height: 600px;
+			&.hittop {
+				top: 0px;
+			}
+			.order-spec {
+				font-size: 15px;
+				border-bottom: 1px solid #e6e6e6;
+				padding-bottom: 30px;
+				&#total {
+					border: none;
+					text-align: center;
+					span {
+						float: none;
+						display: block;
+						&.value {
+							position: relative;
+						    font-size: 36px;
+						    margin-bottom: 5px;
+						}
+					}
+				}
+			}
+		} 
+		.view-order {
+			position: fixed;
+		    bottom: 0px;
+		    z-index: 99;
+		    background: #fff;
+		    width: 100%;
+		    margin-left: -20px;
+		    font-family: $primary-font;
+		    .close {
+			    display: none;
+			    font-size: 19px;
+			    img {
+				    max-width: 12px;
+				    margin-right: 10px;
+			    }
+		    }
+		    #total,
+		    #checkout {
+		        width: 50%;
+		        float: left;
+		        border-top: 1px solid #e1e1e1;
+		        cursor: pointer;
+		    }
+		    #total {
+			    padding: 20px;
+			    .title {
+				    img {
+					    max-width: 12px;
+				    }
+			    }
+			    .value {
+			        font-size: 19px;
+					margin-left: 10px;
+			    }
+		    }
+		    #checkout {
+			    width: 50%;
+			    padding: 12px 20px;
+				font-size: 18px;
+				background: #ffce48;
+				-webkit-appearance: button-bevel;
+				font-family: $primary-font;
+				text-align: left;
+				span {
+					position: relative;
+					top: 6px;
+					float: right;
+				}
+		    }
 		}
 	} 
 }
