@@ -42,8 +42,59 @@ $(function(){
 		file.serverId = response.version;
 		$(".dz-preview:last-child").attr('id', "document-" + file.serverId);
 		$('#document-'+file.serverId).append('<input type="hidden" name="enquiryImages[]" value="'+response.secure_url+'" />');
+		$('#myPictures .required-photos').remove();
 	});
     
+    $('#medium-config input').on('ifChecked', function(event){
+	    $('#medium .value').text(event.target.value);
+	});
+	$('#colour-config input').on('ifChecked', function(event){
+	    $('#colour .value').text(event.target.value);
+	});
+	$('#editing-config input').on('ifChecked', function(event){
+	    $('#editing .value').text(event.target.value);
+	});
+	$('#background-config input').on('ifChecked', function(event){
+	    $('#background .value').text(event.target.value);
+	});
+    
+    $("#size-config select, #number-of-characters-config select").selectric().on("change",function(){
+  	
+  		var numberCharacters = $('#number-of-characters-config select');
+  		var sizeValue = $('#size-config select');
+  		
+  		if($(this).attr('id') == 'characters') {
+	  		$('#characters .value').text(numberCharacters.parent().parent().find('.label').text());
+  		} else {
+	  		$('#size .value').text(sizeValue.parent().parent().find('.label').text());
+	  		
+	  		if(sizeValue.val() == '16x20'){
+		  		$('select#characters').html("<option value='0'>0</option><option value='1'>1</option><option value='2'>2</option><option value='3'>3</option>");
+	  		} else if(sizeValue.val() == '20x24') {
+		  		$('select#characters').html("<option value='0'>0</option><option value='1'>1</option><option value='2'>2</option><option value='3'>3</option><option value='4'>4</option><option value='5'>5</option>");
+	  		} else {
+		  		$('select#characters').html("<option value='0'>0</option><option value='1'>1</option><option value='2'>2</option><option value='3'>3</option><option value='4'>4</option><option value='5'>5</option><option value='6'>6</option><option value='7'>7</option><option value='8'>8</option>");
+	  		}
+	  		
+	  		// Refresh Selectric
+		    $('select#characters').selectric('refresh');
+  		}
+  		
+  		$.ajax({
+	        url: "/api/pricing/",
+	        type: "post",
+	        data: {
+	        	characters: numberCharacters.val(),
+	        	size: sizeValue.val()
+		    },
+	        success: function(data) {
+		        if(data !== 'not_found') {
+			        $('#total .value').text('$'+data.pricing.price);
+		        }  
+	        }
+	    });
+  		
+  	});
     
     $(document).on('click','.title .info',function(){
 		$(this).parent().find('span').toggle();
@@ -55,14 +106,28 @@ $(function(){
 	
 	$(document).on('click','#checkout',function(e){
 		e.preventDefault();
-		$('#order-page').hide();
-		$('#checkout-page').show();
+		if($('.dz-success').length > 0) {
+			
+			$uploadedImage = $('#myPictures input').val();
+			
+			$('#order-page,#checkout').hide();
+			$('#checkout-page').show();
+			$('body').addClass('checkout-page');
+			$('#myPictures .required-photos,.order-summary img').remove();
+			$('<img src="'+$uploadedImage+'"/>').insertAfter('.order-summary .mobile#total');
+		} else {
+			$('#myPictures').append('<div class="required-photos">Please remember to add an image</div>');
+			$('html, body').animate({
+		        scrollTop: $('#myPictures').offset().top
+		    }, 500);  
+		}
 	});
 	
 	$(document).on('click','#go-back',function(e){
 		e.preventDefault();
-		$('#order-page').show();
+		$('#order-page,#checkout').show();
 		$('#checkout-page').hide();
+		$('body').removeClass('checkout-page');
 	});
 	
 	$(document).on('click','.sectors.valid .title',function(e){
@@ -110,8 +175,7 @@ $(function(){
         }
 	});
 	
-	$("#billing-country, #delivery-country").selectric().on("change",function()
-  	{
+	$("#billing-country, #delivery-country").selectric().on("change",function(){
   	
   		var countryCode = $(this).val();
   		

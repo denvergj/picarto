@@ -9996,6 +9996,8 @@ footer {
         padding-bottom: 15px;
         margin: 0 auto;
         font-size: 21px; }
+    #ordering #myPictures .required-photos {
+      color: red; }
   #ordering .entry-details {
     width: 65%;
     float: left; }
@@ -10058,6 +10060,10 @@ footer {
       font-family: "Glegoo", sans-serif;
       border-bottom: 1px solid #e6e6e6;
       padding-bottom: 10px; }
+    #ordering .order-summary img {
+      display: none;
+      max-width: 100px;
+      margin: 15px 0 0; }
     #ordering .order-summary .order-spec {
       padding: 20px 0; }
       #ordering .order-summary .order-spec#total {
@@ -10184,6 +10190,9 @@ footer {
             #ordering #checkout-page .entry-details .sectors .details .actions button:hover {
               background: #fed976; }
 
+.checkout-page #ordering .order-summary img {
+  display: block; }
+
 @media (min-width: 768px) and (max-width: 968px) {
   #ordering .order-summary {
     width: 30%; }
@@ -10195,6 +10204,8 @@ footer {
         top: -8px; } }
 
 @media (max-width: 767px) {
+  .checkout-page #ordering .view-order {
+    display: none; }
   #ordering {
     background: #fafafa;
     margin-top: -40px; }

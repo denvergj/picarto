@@ -4,8 +4,8 @@
 			<div id="order-page">
 				<div class="form-group">
 					<div id="myPictures" class="dropzone">
-						<div class="dz-message desktop" data-dz-message><span>Drop your photos here or</span><span id="browse">Browse computer</span></div>
-						<div class="dz-message mobile" data-dz-message><span id="browse">Select photos</span></div>
+						<div class="dz-message desktop" data-dz-message><span>Drop your photo here or</span><span id="browse">Browse computer</span></div>
+						<div class="dz-message mobile" data-dz-message><span id="browse">Select photo</span></div>
 					</div>
 	            </div>
 				<div class="entry-details">
@@ -48,11 +48,10 @@
 						</div>
 						<div class="config-values">
 							<div class="inputs">
-								<select name="size">
+								<select id="size" name="size">
 									<option value="16x20">16"×20" (40×50cm)</option>
 									<option value="20x24">20"x24" (50x60cm)</option>
 									<option value="30x40">30"x40" (75x100cm)</option>
-									<option value="48x72">48"x72" (100x180cm)</option>
 								</select>
 							</div>
 						</div>
@@ -66,23 +65,11 @@
 						</div>
 						<div class="config-values">
 							<div class="inputs">
-								<select name="size">
+								<select id="characters" name="characters">
 									<option value="0">0</option>
 									<option value="1">1</option>
 									<option value="2">2</option>
 									<option value="3">3</option>
-									<option value="4">4</option>
-									<option value="5">5</option>
-									<option value="6">6</option>
-									<option value="7">7</option>
-									<option value="8">8</option>
-									<option value="9">9</option>
-									<option value="10">10</option>
-									<option value="11">11</option>
-									<option value="12">12</option>
-									<option value="13">13</option>
-									<option value="14">14</option>
-									<option value="15">15</option>
 								</select>
 							</div>
 						</div>
@@ -856,7 +843,7 @@
 	            		ORDER SUMMARY
 	            	</div>
 	            	<div class="order-spec mobile" id="total">
-	            		<span class="value">$2724</span>
+	            		<span class="value">$249</span>
 	            		<span class="title">Total (AUD)</span>
 	            	</div>
 	            	<div class="order-spec" id="medium">
@@ -879,9 +866,13 @@
 	            		<span class="title">Editing</span>
 	            		<span class="value">No</span>
 	            	</div>
+	            	<div class="order-spec" id="background">
+	            		<span class="title">Background</span>
+	            		<span class="value">Simplified</span>
+	            	</div>
 	            	<div class="order-spec desktop" id="total">
 	            		<span class="title">Total (AUD)</span>
-	            		<span class="value">$2724</span>
+	            		<span class="value">$249</span>
 	            	</div>
             	</div>
             	<button id="checkout" class="desktop">
@@ -892,7 +883,7 @@
             <div class="mobile view-order">
             	<div id="total">
             		<span class="title"><img src="/dist/imgs/up-arrow.png"/></span>
-	            	<span class="value">$2724</span>
+	            	<span class="value">$249</span>
 	            	<span class="close"><img src="/dist/imgs/down-arrow.png"/> Close</span>
             	</div>
             	<button id="checkout">

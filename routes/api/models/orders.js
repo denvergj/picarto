@@ -18,7 +18,7 @@ Orders.add({
 		{ value: 'Oil painting', label: 'Oil painting' },
 		{ value: 'Another', label: 'Another' },
 	] },
-	enquiryImages: {type: Types.TextArray},
+	photoToPaint: {type: Types.TextArray},
 	message: { type: Types.Markdown, required: true },
 	createdAt: { type: Date, default: Date.now },
 });
@@ -34,6 +34,7 @@ Orders.schema.post('save', function () {
 	}
 });
 
+/*
 Orders.schema.methods.sendNotificationEmail = function (callback) {
 	if (typeof callback !== 'function') {
 		callback = function (err) {
@@ -69,6 +70,7 @@ Orders.schema.methods.sendNotificationEmail = function (callback) {
 		}, callback);
 	});
 };
+*/
 
 Orders.defaultSort = '-createdAt';
 Orders.defaultColumns = 'name, email, enquiryType, createdAt';
