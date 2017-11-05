@@ -12,17 +12,40 @@ var Orders = new keystone.List('Orders', {
 });
 
 Orders.add({
-	name: { type: Types.Name, required: true },
-	email: { type: Types.Email, required: true },
-	enquiryType: { type: Types.Select, options: [
-		{ value: 'Oil painting', label: 'Oil painting' },
-		{ value: 'Another', label: 'Another' },
-	] },
-	photoToPaint: {type: Types.TextArray},
-	message: { type: Types.Markdown, required: true },
-	createdAt: { type: Date, default: Date.now },
+	orderId: { type: String, required: true },
+	image: { type: Types.TextArray },
+	medium: { type: String, required: true },
+	colour: { type: String, required: true },
+	size: { type: String, required: true },
+	characters: { type: String, required: true },
+	editing: { type: String, required: true },
+	editingNotes: { type: String },
+	background: { type: String, required: true },
+	billingFirstName: { type: String, required: true },
+	billingLastName: { type: String, required: true },
+	billingEmail: { type: String, required: true },
+	billingTelephone: { type: String, required: true },
+	billingAddressOne: { type: String, required: true },
+	billingAddressTwo: { type: String },
+	billingCity: { type: String, required: true },
+	billingPostCode: { type: String, required: true },
+	billingCountry: { type: String, required: true },
+	billingRegionState: { type: String, required: true },
+	deliveryFirstName: { type: String, required: true },
+	deliveryLastName: { type: String, required: true },
+	deliveryEmail: { type: String, required: true },
+	deliveryTelephone: { type: String, required: true },
+	deliveryAddressOne: { type: String, required: true },
+	deliveryAddressTwo: { type: String },
+	deliveryCity: { type: String, required: true },
+	deliveryPostCode: { type: String, required: true },
+	deliveryCountry: { type: String, required: true },
+	deliveryRegionState: { type: String, required: true },
+	specialRequests: { type: String },
+	createdAt: { type: Date, default: Date.now }
 });
 
+/*
 Orders.schema.pre('save', function (next) {
 	this.wasNew = this.isNew;
 	next();
@@ -33,6 +56,10 @@ Orders.schema.post('save', function () {
 		//this.sendNotificationEmail();
 	}
 });
+*/
+
+
+
 
 /*
 Orders.schema.methods.sendNotificationEmail = function (callback) {
@@ -73,5 +100,5 @@ Orders.schema.methods.sendNotificationEmail = function (callback) {
 */
 
 Orders.defaultSort = '-createdAt';
-Orders.defaultColumns = 'name, email, enquiryType, createdAt';
+Orders.defaultColumns = 'deliveryFirstName, billingLastName, deliveryEmail, createdAt';
 Orders.register();

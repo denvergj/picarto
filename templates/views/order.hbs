@@ -1,5 +1,6 @@
 <div id="ordering">
 	<div class="content-container">
+		<div class="overlay"></div>
 		<form>
 			<div id="order-page">
 				<div class="form-group">
@@ -67,7 +68,7 @@
 							<div class="inputs">
 								<select id="characters" name="characters">
 									<option value="0">0</option>
-									<option value="1">1</option>
+									<option value="1" selected>1</option>
 									<option value="2">2</option>
 									<option value="3">3</option>
 								</select>
@@ -93,7 +94,7 @@
 								<label for="editing-yes">Yes</label>
 							</div>
 						</div>
-						<textarea name="editing-notes" placeholder="Please enter comment..."></textarea>
+						<textarea name="editingNotes" placeholder="Please enter comment..."></textarea>
 					</div>
 					
 					<div class="configurate" id="background-config">
@@ -129,41 +130,41 @@
 							<div class="sides">
 								<div class="field">
 									<label><span>*</span> FIRST NAME</label>
-									<input type="text" name="billing-first-name" class="needed" placeholder="First name..."/>
+									<input type="text" name="billingFirstName" class="needed" placeholder="First name..."/>
 								</div>
 								<div class="field">
 									<label><span>*</span> LAST NAME</label>
-									<input type="text" name="billing-last-name" class="needed" placeholder="Last name..."/>
+									<input type="text" name="billingLastName" class="needed" placeholder="Last name..."/>
 								</div>
 								<div class="field">
 									<label><span>*</span> E-MAIL</label>
-									<input type="text" name="billing-email" class="needed" placeholder="E-mail..."/>
+									<input type="text" name="billingEmail" class="needed" placeholder="E-mail..."/>
 								</div>
 								<div class="field">
 									<label><span>*</span> TELEPHONE</label>
-									<input type="text" name="billing-telephone" class="needed" placeholder="Telephone..."/>
+									<input type="text" name="billingTelephone" class="needed" placeholder="Telephone..."/>
 								</div>
 							</div>
 							<div class="sides">
 								<div class="field">
 									<label><span>*</span> ADDRESS 1</label>
-									<input type="text" name="billing-address-one" class="needed" placeholder="Address 1..."/>
+									<input type="text" name="billingAddressOne" class="needed" placeholder="Address 1..."/>
 								</div>
 								<div class="field">
 									<label>ADDRESS 2</label>
-									<input type="text" name="billing-address-two" placeholder="Address 2..."/>
+									<input type="text" name="billingAddressTwo" placeholder="Address 2..."/>
 								</div>
 								<div class="field">
 									<label><span>*</span> CITY</label>
-									<input type="text" name="billing-city" class="needed" placeholder="City..."/>
+									<input type="text" name="billingCity" class="needed" placeholder="City..."/>
 								</div>
 								<div class="field">
 									<label><span>*</span> POST CODE</label>
-									<input type="text" name="billing-post-code" class="needed" placeholder="Post code..."/>
+									<input type="text" name="billingPostCode" class="needed" placeholder="Post code..."/>
 								</div>
 								<div class="field">
 									<label><span>*</span> COUNTRY</label>
-									<select id="billing-country" name="billing-country">
+									<select id="billing-country" name="billingCountry">
 										<option value="AU">Australia</option>
 										<option value="AF">Afghanistan</option>
 										<option value="AL">Albania</option>
@@ -415,7 +416,7 @@
 								</div>
 								<div class="field">
 									<label><span>*</span> REGION / STATE</label>
-									<select id="billing-region" name="billing-region-state">
+									<select id="billing-region" name="billingRegionState">
 										<option value="Australian Capital Territory">Australian Capital Territory</option>
 										<option value="New South Wales">New South Wales</option>
 										<option value="Northern Territory">Northern Territory</option>
@@ -429,7 +430,7 @@
 							</div>
 							<div class="actions">
 								<div class="field">
-									<input id="delivery-same" type="checkbox" name="delivery-billing-same" />
+									<input id="delivery-same" type="checkbox" name="deliveryBillingSame" />
 									<label for="delivery-same">My delivery and billing addresses are the same.</label>
 								</div>
 								<button class="continue" data-next="delivery-details">
@@ -448,41 +449,41 @@
 							<div class="sides">
 								<div class="field">
 									<label><span>*</span> FIRST NAME</label>
-									<input type="text" name="delivery-first-name" class="needed" placeholder="First name..."/>
+									<input type="text" name="deliveryFirstName" id="copy1" class="needed" placeholder="First name..."/>
 								</div>
 								<div class="field">
 									<label><span>*</span> LAST NAME</label>
-									<input type="text" name="delivery-last-name" class="needed" placeholder="Last name..."/>
+									<input type="text" name="deliveryLastName" id="copy2" class="needed" placeholder="Last name..."/>
 								</div>
 								<div class="field">
 									<label><span>*</span> E-MAIL</label>
-									<input type="text" name="delivery-email" class="needed" placeholder="E-mail..."/>
+									<input type="text" name="deliveryEmail" id="copy3" class="needed" placeholder="E-mail..."/>
 								</div>
 								<div class="field">
 									<label><span>*</span> TELEPHONE</label>
-									<input type="text" name="delivery-telephone" class="needed" placeholder="Telephone..."/>
+									<input type="text" name="deliveryTelephone" id="copy4" class="needed" placeholder="Telephone..."/>
 								</div>
 							</div>
 							<div class="sides">
 								<div class="field">
 									<label><span>*</span> ADDRESS 1</label>
-									<input type="text" name="delivery-address-one" class="needed" placeholder="Address 1..."/>
+									<input type="text" name="deliveryAddressOne" id="copy5" class="needed" placeholder="Address 1..."/>
 								</div>
 								<div class="field">
 									<label>ADDRESS 2</label>
-									<input type="text" name="delivery-address-two" placeholder="Address 2..."/>
+									<input type="text" name="deliveryAddressTwo" id="copy6" placeholder="Address 2..."/>
 								</div>
 								<div class="field">
 									<label><span>*</span> CITY</label>
-									<input type="text" name="delivery-city" class="needed" placeholder="City..."/>
+									<input type="text" name="deliveryCity" id="copy7" class="needed" placeholder="City..."/>
 								</div>
 								<div class="field">
 									<label><span>*</span> POST CODE</label>
-									<input type="text" name="delivery-post-code" class="needed" placeholder="Post code..."/>
+									<input type="text" name="deliveryPostCode" id="copy8" class="needed" placeholder="Post code..."/>
 								</div>
 								<div class="field">
 									<label><span>*</span> COUNTRY</label>
-									<select name="delivery-country">
+									<select name="deliveryCountry">
 										<option value="AU">Australia</option>
 										<option value="AF">Afghanistan</option>
 										<option value="AL">Albania</option>
@@ -734,7 +735,7 @@
 								</div>
 								<div class="field">
 									<label><span>*</span> REGION / STATE</label>
-									<select name="delivery-region-state">
+									<select name="deliveryRegionState">
 										<option value="Australian Capital Territory">Australian Capital Territory</option>
 										<option value="New South Wales">New South Wales</option>
 										<option value="Northern Territory">Northern Territory</option>
@@ -761,7 +762,7 @@
 						<div class="details">
 							<div class="sides">
 								<div class="field">
-									<textarea name="special-requests" placeholder="Enter any special requests..."></textarea>
+									<textarea name="specialRequests" placeholder="Enter any special requests..."></textarea>
 								</div>
 							</div>
 							<div class="actions">
@@ -776,23 +777,27 @@
 						<div class="title">
 							Step 4: Payment Method
 						</div>
-						<div class="details">
+						<div class="details" style="display:block;">
 							<div class="sides">
 								<div class="field">
-									<label><span>*</span> FIRST NAME</label>
-									<input type="text" name="billing-first-name" placeholder="First name..."/>
+									<label><span>*</span> NAME ON CARD</label>
+									<input type="text" name="card-name" class="needed" placeholder="name on card..."/>
 								</div>
 								<div class="field">
-									<label><span>*</span> LAST NAME</label>
-									<input type="text" name="billing-last-name" placeholder="Last name..."/>
+									<label><span>*</span> CARD NUMBER</label>
+									<input type="text" name="card-number" class="needed" placeholder="Card number..."/>
 								</div>
-								<div class="field">
-									<label><span>*</span> E-MAIL</label>
-									<input type="text" name="billing-email" placeholder="E-mail..."/>
+								<div class="field exp">
+									<label><span>*</span> EXPIRY MONTH</label>
+									<input type="text" name="card-exp-month" class="needed" placeholder="Expiry month..."/>
 								</div>
-								<div class="field">
-									<label><span>*</span> TELEPHONE</label>
-									<input type="text" name="billing-telephone" placeholder="Telephone..."/>
+								<div class="field exp">
+									<label><span>*</span> EXPIRY YEAR</label>
+									<input type="text" name="card-exp-year" class="needed" placeholder="Expiry year..."/>
+								</div>
+								<div class="field cvc">
+									<label><span>*</span> CVV</label>
+									<input type="text" name="card-cvc" class="needed" placeholder="CVV..."/>
 								</div>
 							</div>
 							<div class="actions">
@@ -809,22 +814,7 @@
 						</div>
 						<div class="details">
 							<div class="sides">
-								<div class="field">
-									<label><span>*</span> FIRST NAME</label>
-									<input type="text" name="billing-first-name" placeholder="First name..."/>
-								</div>
-								<div class="field">
-									<label><span>*</span> LAST NAME</label>
-									<input type="text" name="billing-last-name" placeholder="Last name..."/>
-								</div>
-								<div class="field">
-									<label><span>*</span> E-MAIL</label>
-									<input type="text" name="billing-email" placeholder="E-mail..."/>
-								</div>
-								<div class="field">
-									<label><span>*</span> TELEPHONE</label>
-									<input type="text" name="billing-telephone" placeholder="Telephone..."/>
-								</div>
+								
 							</div>
 							<div class="actions">
 								<button class="pay">

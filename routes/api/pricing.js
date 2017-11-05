@@ -15,7 +15,8 @@ exports.list = function(req, res) {
      if (!items) return res.json('not found');
 
     res.json({
-      pricing: items
+      pricing: items,
+      charge: items
     });
 
   });

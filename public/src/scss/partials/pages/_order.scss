@@ -2,6 +2,22 @@
 	font-family: $primary-font;
 	overflow: hidden;
 	margin-bottom: 85px;
+	.content-container {
+		overflow: hidden;
+	}
+	&.processing {
+		.overlay {
+			display: block;
+		}
+	}
+	.overlay {
+		background: #fff;
+		opacity: 0.7;
+		position: absolute;
+		height: 100%;
+		width: 100%;
+		display: none;
+	}
 	#myPictures {
 		margin: 30px auto 100px auto;
 		text-align: center;
@@ -192,6 +208,23 @@
 						}
 						.actions {
 							margin-top: 10px;
+						}
+					}
+				}
+				&#payment-method {
+					.details {
+						.sides {
+							width: 100%;
+							.field {
+								&.cvc {
+									width: 25%;
+								}
+								&.exp {
+									width: 49%;
+									float: left;
+									margin-right: 1%;
+								}
+							}
 						}
 					}
 				}
@@ -396,7 +429,7 @@
 			position: fixed;
 			top: 51px;
 			display: none;
-			z-index: 9;
+			z-index: 99;
 			margin-left: -20px;
 			margin-top: 0px;
 			padding-top: 15px;

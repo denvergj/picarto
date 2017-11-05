@@ -41,9 +41,11 @@ exports = module.exports = function (app) {
 	app.get('/gallery', routes.views.gallery);
 	app.all('/contact', routes.views.contact);
 	app.all('/order', routes.views.orders);
+	app.all('/order/complete', routes.views.orders.complete);
 	
 	// API Calls
 	app.post('/api/pricing', routes.api.pricing.list);
+	app.post('/api/pay', routes.api.orders.pay);
 	//app.post('/api/pricing/add', routes.api.pricing.create);
 	
 	//app.post('/api/order/create', routes.api.orders.create);

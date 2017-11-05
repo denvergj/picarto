@@ -159,8 +159,9 @@ $(function(){
 	        $stepGroup.addClass('valid');
 	        if($stepGroup.attr('id') == 'billing-details') {
 		        if($('input#delivery-same').iCheck('update')[0].checked) {
-			        $(this).parent().parent().find("input[type=text]").each(function() {
-						$('#delivery-details input').val(this.value);
+			        $(this).parent().parent().find("input[type=text]").each(function(i,val) {
+				        i++;
+						$('#delivery-details input#copy'+i).val($(this).val());
 			        });
 		        }
 	        }
@@ -175,6 +176,11 @@ $(function(){
         }
 	});
 	
+	/******
+	*
+	* Functionality for adding regions to countries.
+	*
+	**********/
 	$("#billing-country, #delivery-country").selectric().on("change",function(){
   	
   		var countryCode = $(this).val();
@@ -196,6 +202,81 @@ $(function(){
 		   $('#billing-region,#delivery-country').selectric('refresh');
 	    }); 
   	});
+	
+	
+	/******
+	*
+	* Functionality for making payments.
+	*
+	**********/
+	var publicStripeApiKey = 'pk_test_f2WSBbW3G918SlJvC9lCtgBk';
+	var publicStripeApiKeyTesting = 'pk_test_f2WSBbW3G918SlJvC9lCtgBk';
+	
+	Stripe.setPublishableKey(publicStripeApiKeyTesting);
+	
+	function stripeResponseHandler (status, response) {
+		
+		if (response.error) {
+			$('#ordering').removeClass('processing');
+			$('#error').text(response.error.message);
+			return;
+		}
+		
+		var form = $("#ordering form");
+		form.append("<input type='hidden' name='stripeToken' value='" + response.id + "'/>");
+		
+		$.post(
+			'/api/pay',
+			form.serialize(),
+			function (status) {
+				if(status == 'order_created') {
+					window.location = '/order/complete/';
+				}
+			  if (status != 'ok') {
+			    console.log(status);
+			  } else {
+			    console.log(status);
+			  }
+			}
+		);
+		
+		//$('#ordering').removeClass('processing');
+	}
+	
+	
+	$("#ordering form").submit(function(event) {
+	 	
+	  	var numberCharacters = $('#number-of-characters-config select').val();
+	  	var sizeValue = $('#size-config select').val();
+  	    
+  	    $('#ordering').addClass('processing');
+  	    
+  	    // Get the price for the order.
+	    $.ajax({
+			url: "/api/pricing/",
+			type: "POST",
+			data: {
+				characters: numberCharacters,
+				size: sizeValue
+			},
+			success: function(data) {
+			    if(data !== 'not_found') {
+				    $("#ordering form input[name='stripeAmount']").remove();
+				    $("#ordering form").append("<input type='hidden' name='stripeAmount' value='" + data.charge.price + "'/>");
+			        Stripe.createToken({
+					    number: $('input[name="card-number"]').val(),
+					    cvc: $('input[name="card-cvc"]').val(),
+					    exp_month: $('input[name="card-exp-month"]').val(),
+					    exp_year: $('input[name="card-exp-year"]').val()
+					}, data.charge.price, stripeResponseHandler);
+			    }  
+			}
+	    });
+	  
+	  // prevent the form from submitting with the default action
+	  return false;
+	});
+	
 	
 	$(window).scroll(function() { 
         if ($(window).scrollTop() > 51) {
