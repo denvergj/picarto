@@ -23,6 +23,8 @@ exports = module.exports = function(req, res) {
         });
 		
     });
+    
+    console.log(keystone.get('siteUrl'));
 	
     // Render the view
     view.render('index');

@@ -1,22 +1,23 @@
+<img src="http://picartosite.herokuapp.com/dist/imgs/email-logo.jpg"/>
 <h1>Hi %recipient.firstName%</h1>
 <p class="text-larger">You have received a contact enquiry that was just submitted via the {{brand}}.co website.</p>
 {{#if enquiry.email}}
 	<p class="text-larger">
-		Name:
+		<strong>Name:</strong>
 		{{#if enquiry.name.full}}
-			<strong>{{enquiry.name.full}}</strong>
+			{{enquiry.name.full}}
 		{{/if}}
 	</p>
 	
 	<p class="text-larger">
-		Email:
+		<strong>Email:</strong>
 		{{#if enquiry.email}}
-			(<a href="mailto:{{enquiry.email}}">{{enquiry.email}}</a>)
+			<a href="mailto:{{enquiry.email}}">{{enquiry.email}}</a>
 		{{/if}}
 	</p>
 	
 	<p class="text-larger">
-		Interested in:
+		<strong>Interested in:</strong>
 		{{#if enquiry.enquiryType}}
 			<p class="text-larger">{{underscoreFormat enquiry 'enquiryType'}}</p>
 		{{/if}}
@@ -27,7 +28,7 @@
 	</p>
 	
 	<p class="text-larger">
-		Comments:
+		<strong>Comments:</strong>
 		{{#if enquiry.message}}
 			{{{enquiry.message.html}}}
 		{{/if}}

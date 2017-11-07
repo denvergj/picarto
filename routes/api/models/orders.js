@@ -45,7 +45,6 @@ Orders.add({
 	createdAt: { type: Date, default: Date.now }
 });
 
-/*
 Orders.schema.pre('save', function (next) {
 	this.wasNew = this.isNew;
 	next();
@@ -53,15 +52,11 @@ Orders.schema.pre('save', function (next) {
 
 Orders.schema.post('save', function () {
 	if (this.wasNew) {
-		//this.sendNotificationEmail();
+		this.sendNotificationEmail();
 	}
 });
-*/
 
 
-
-
-/*
 Orders.schema.methods.sendNotificationEmail = function (callback) {
 	if (typeof callback !== 'function') {
 		callback = function (err) {
@@ -76,28 +71,46 @@ Orders.schema.methods.sendNotificationEmail = function (callback) {
 		return callback(new Error('could not find mailgun credentials'));
 	}
 
-	var enquiry = this;
+	var order = this;
 	var brand = keystone.get('brand');
 
+	console.log(order);
+
+	// Send email to site admin.
 	keystone.list('User').model.find().where('isAdmin', true).exec(function (err, admins) {
 		if (err) return callback(err);
 		new keystone.Email({
-			templateName: 'enquiry-notification',
+			templateName: 'order-received',
 			transport: 'mailgun',
 		}).send({
 			to: admins,
 			from: {
 				name: 'Picarto',
-				email: 'contact@picarto.com',
+				email: 'service@picarto.com',
 			},
-			subject: 'New Enquiry for Picarto',
-			enquiry: enquiry,
+			subject: 'Picarto - New Order',
+			order: order,
 			brand: brand,
 			layout: false,
 		}, callback);
 	});
+	
+	// Send order received email to customer.
+	new keystone.Email({
+		templateName: 'order-received-customer',
+		transport: 'mailgun',
+	}).send({
+		to: order.deliveryEmail,
+		from: {
+			name: 'Picarto',
+			email: 'service@picarto.com',
+		},
+		subject: 'Picarto - We have received your order',
+		order: order,
+		brand: brand,
+		layout: false,
+	}, callback);
 };
-*/
 
 Orders.defaultSort = '-createdAt';
 Orders.defaultColumns = 'deliveryFirstName, billingLastName, deliveryEmail, createdAt';

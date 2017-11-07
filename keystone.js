@@ -57,6 +57,11 @@ keystone.set('routes', require('./routes'));
 
 keystone.set('cookie secret', process.env.COOKIE_SECRET);
 
+
+var siteUrl = window.location.origin;
+
+keystone.set('siteUrl', siteUrl);
+
 // Configure the navigation bar in Keystone's Admin UI
 keystone.set('nav', {
 	posts: ['posts', 'post-categories'],
