@@ -1,27 +1,35 @@
 <h1>Hi %recipient.firstName%</h1>
-<p class="text-larger">An enquiry was just submitted to {{brand}}:</p>
+<p class="text-larger">You have received a contact enquiry that was just submitted via the {{brand}}.co website.</p>
 {{#if enquiry.email}}
-	<p class="text-larger">From
-	{{#if enquiry.name.full}}
-		<strong>{{enquiry.name.full}}</strong>
-	{{/if}}
-
-	{{#if enquiry.email}}
-		(<a href="mailto:{{enquiry.email}}">{{enquiry.email}}</a>)
-	{{/if}}
+	<p class="text-larger">
+		Name:
+		{{#if enquiry.name.full}}
+			<strong>{{enquiry.name.full}}</strong>
+		{{/if}}
 	</p>
-
-	{{#if enquiry.phone}}
-		<p class="text-larger">Phone: {{enquiry.phone}}</p>
-	{{/if}}
-
-	{{#if enquiry.enquiryType}}
-		<p class="text-larger">{{underscoreFormat enquiry 'enquiryType'}}</p>
-	{{/if}}
-
-	{{#if enquiry.message}}
-		{{{enquiry.message.html}}}
-	{{/if}}
-
-	<p class="text-muted">Sent {{underscoreFormat enquiry 'createdAt'}}</p>
+	
+	<p class="text-larger">
+		Email:
+		{{#if enquiry.email}}
+			(<a href="mailto:{{enquiry.email}}">{{enquiry.email}}</a>)
+		{{/if}}
+	</p>
+	
+	<p class="text-larger">
+		Interested in:
+		{{#if enquiry.enquiryType}}
+			<p class="text-larger">{{underscoreFormat enquiry 'enquiryType'}}</p>
+		{{/if}}
+		{{#if enquiry.enquiryImages}}
+			Uploaded Images:
+			<p class="text-larger">{{enquiry.enquiryImages}}</p>
+		{{/if}}
+	</p>
+	
+	<p class="text-larger">
+		Comments:
+		{{#if enquiry.message}}
+			{{{enquiry.message.html}}}
+		{{/if}}
+	</p>
 {{/if}}

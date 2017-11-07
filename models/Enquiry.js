@@ -16,7 +16,7 @@ Enquiry.add({
 	email: { type: Types.Email, required: true },
 	enquiryType: { type: Types.Select, options: [
 		{ value: 'Oil painting', label: 'Oil painting' },
-		{ value: 'Another', label: 'Another' },
+		{ value: 'A pencil sketch', label: 'A pencil sketch' },
 	] },
 	enquiryImages: {type: Types.TextArray},
 	message: { type: Types.Markdown, required: true },
