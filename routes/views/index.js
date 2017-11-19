@@ -42,7 +42,7 @@ exports.privacy = function(req, res) {
 	
     view.on('init', function(next) {
 
-       var q = keystone.list('privacy').paginate()
+       var q = keystone.list('pages').paginate()
             .where('state', 'published')
             .where('slug', 'privacy-policy')
             .sort('-publishedDate');
