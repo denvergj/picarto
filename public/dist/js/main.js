@@ -3310,7 +3310,7 @@ $(function(){
 	        	size: sizeValue.val()
 		    },
 	        success: function(data) {
-		        if(data !== 'not_found') {
+		        if(data !== 'not found') {
 			        $('#total .value').text('$'+data.pricing.price);
 		        }  
 	        }

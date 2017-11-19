@@ -8652,6 +8652,12 @@ p {
 a {
   color: #40393d; }
 
+#privacy h1 {
+  text-align: center; }
+
+#privacy p {
+  margin-bottom: 15px; }
+
 .mobile {
   display: none; }
 
@@ -9463,6 +9469,9 @@ footer {
     footer .copyright span {
       position: relative;
       top: 3px; }
+    footer .copyright a {
+      display: inline-block;
+      color: #989196; }
 
 @media (max-width: 960px) {
   footer .paymentMethods {
