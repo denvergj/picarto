@@ -14,7 +14,7 @@ var Orders = new keystone.List('Orders', {
 Orders.add({
 	orderId: { type: String, required: true },
 	image: { type: Types.TextArray },
-	medium: { type: String, required: true },
+	//medium: { type: String, required: true },
 	colour: { type: String, required: true },
 	size: { type: String, required: true },
 	characters: { type: String, required: true },
@@ -86,7 +86,7 @@ Orders.schema.methods.sendNotificationEmail = function (callback) {
 			to: admins,
 			from: {
 				name: 'Picarto',
-				email: 'service@picarto.com',
+				email: 'service@picarto.co',
 			},
 			subject: 'Picarto - New Order',
 			order: order,
@@ -103,7 +103,7 @@ Orders.schema.methods.sendNotificationEmail = function (callback) {
 		to: order.deliveryEmail,
 		from: {
 			name: 'Picarto',
-			email: 'service@picarto.com',
+			email: 'service@picarto.co',
 		},
 		subject: 'Picarto - We have received your order',
 		order: order,

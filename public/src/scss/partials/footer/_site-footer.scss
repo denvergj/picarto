@@ -6,9 +6,10 @@ footer {
 	}
 	hr {
 		clear: both;
-		margin: 40px 0 30px;
-		margin-bottom: 40px;
-		border: 1px solid #e6e6e6;
+	    margin: 25px 0 40px 0;
+	    border: 1px solid #e6e6e6;
+	    float: left;
+	    width: 100%;
 	}
 	.paymentMethods {
 		vertical-align: top;
@@ -56,6 +57,15 @@ footer {
 					}
 			    }
 			}
+		}
+		#registered {
+			padding: 15px 0;
+		    font-size: 15px;
+		    color: #d54c78;
+		    font-family: $primary-font;
+		    &.error {
+			    color: red;
+		    }
 		}
 	}
 	.social {

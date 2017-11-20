@@ -60,7 +60,7 @@ Enquiry.schema.methods.sendNotificationEmail = function (callback) {
 			to: admins,
 			from: {
 				name: 'Picarto',
-				email: 'contact@picarto.com',
+				email: 'contact@picarto.co',
 			},
 			subject: 'New Enquiry for Picarto',
 			enquiry: enquiry,

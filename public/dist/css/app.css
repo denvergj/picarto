@@ -9418,9 +9418,10 @@ footer {
     padding: 60px 20px; }
   footer hr {
     clear: both;
-    margin: 40px 0 30px;
-    margin-bottom: 40px;
-    border: 1px solid #e6e6e6; }
+    margin: 25px 0 40px 0;
+    border: 1px solid #e6e6e6;
+    float: left;
+    width: 100%; }
   footer .paymentMethods {
     vertical-align: top;
     display: inline-block;
@@ -9458,6 +9459,13 @@ footer {
         font-family: "Glegoo-Bold", sans-serif; }
         footer #mc_embed_signup form input.button:hover {
           background: #fed976; }
+    footer #mc_embed_signup #registered {
+      padding: 15px 0;
+      font-size: 15px;
+      color: #d54c78;
+      font-family: "Glegoo", sans-serif; }
+      footer #mc_embed_signup #registered.error {
+        color: red; }
   footer .social {
     float: left;
     margin-top: -20px; }
@@ -9535,7 +9543,8 @@ footer {
     max-width: 920px;
     height: 568px;
     margin: 0 auto 50px auto;
-    overflow: hidden; }
+    overflow: hidden;
+    position: relative; }
     #home section#paintingExample #imageRevealer .changeImage {
       display: none;
       cursor: pointer;

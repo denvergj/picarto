@@ -47,6 +47,8 @@ exports = module.exports = function (app) {
 	// API Calls
 	app.post('/api/pricing', routes.api.pricing.list);
 	app.post('/api/pay', routes.api.orders.pay);
+	
+	app.post('/api/newsletterSignup', routes.api.newsletter.signup);
 	//app.post('/api/pricing/add', routes.api.pricing.create);
 	
 	//app.post('/api/order/create', routes.api.orders.create);
