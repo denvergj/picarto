@@ -38,6 +38,7 @@ keystone.init({
 keystone.set(
 	'cloudinary config', { cloud_name: 'picarto', api_key: '494561111212487', api_secret: '00WBcD4SlSWHFXTSiMKaZl_qMao' }
 );
+keystone.set('cloudinary secure', true);
 
 // Load your project's Models
 keystone.import('models');
