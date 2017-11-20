@@ -80,12 +80,16 @@ $(function(){
 		    $('select#characters').selectric('refresh');
   		}
   		
+  		// Get editing value.
+  		$editing = $('#editing-config input:checked').val();
+  		
   		$.ajax({
 	        url: "/api/pricing/",
 	        type: "post",
 	        data: {
 	        	characters: numberCharacters.val(),
-	        	size: sizeValue.val()
+	        	size: sizeValue.val(),
+	        	editing: $editing
 		    },
 	        success: function(data) {
 		        if(data !== 'not found') {
@@ -132,6 +136,21 @@ $(function(){
 	
 	$(document).on('click','.sectors.valid .title',function(e){
 		$(this).parent().find('.details').toggle();
+	});
+	
+	
+	// Fixed editing price.
+	$('#editing-config input').on('ifChecked', function(event){
+	 	$editingValue = $(this).val();
+	 	
+	 	$currentPrice = $('#total .value').text().replace('$','');
+	 	if($editingValue == 'Yes') {
+		 	$totalVal = parseInt($currentPrice) + 70;
+		 	$('#total .value').text('$'+$totalVal);
+	 	} else {
+	 		$totalVal = parseInt($currentPrice) - 70;
+		 	$('#total .value').text('$'+$totalVal);
+	 	}
 	});
 	
 	/******
@@ -251,13 +270,17 @@ $(function(){
   	    
   	    $('#ordering').addClass('processing');
   	    
+  	    // Get editing value.
+  		$editing = $('#editing-config input:checked').val();
+  	    
   	    // Get the price for the order.
 	    $.ajax({
 			url: "/api/pricing/",
 			type: "POST",
 			data: {
 				characters: numberCharacters,
-				size: sizeValue
+				size: sizeValue,
+				editing: $editing
 			},
 			success: function(data) {
 			    if(data !== 'not_found') {

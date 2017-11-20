@@ -13,7 +13,10 @@ exports.list = function(req, res) {
     if (err) return res.json({ err: err });
     
      if (!items) return res.json('not found');
-
+	 
+	 if(req.body.editing == 'Yes')
+	 	items.price = parseInt(items.price) + 70;
+	 
     res.json({
       pricing: items,
       charge: items
