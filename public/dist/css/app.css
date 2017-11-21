@@ -10083,6 +10083,16 @@ footer {
     margin-top: -30px;
     width: 25%;
     font-family: "Glegoo", sans-serif; }
+    #ordering .order-summary.hittop {
+      top: 40px;
+      width: 21%;
+      right: 8%;
+      position: fixed; }
+    #ordering .order-summary.finished {
+      position: relative;
+      margin-top: 550px;
+      width: 25%;
+      right: inherit; }
     #ordering .order-summary .contain {
       padding: 15px; }
     #ordering .order-summary div.title {
@@ -10227,6 +10237,9 @@ footer {
             #ordering #checkout-page .entry-details .sectors .details .actions button:hover {
               background: #fed976; }
 
+.checkout-page #ordering .order-summary.finished {
+  margin-top: 1050px; }
+
 .checkout-page #ordering .order-summary img {
   display: block; }
 
@@ -10287,7 +10300,7 @@ footer {
     #ordering .order-summary {
       width: 100%;
       position: fixed;
-      top: 51px;
+      top: 0;
       display: none;
       z-index: 99;
       margin-left: -20px;

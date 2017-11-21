@@ -2,8 +2,8 @@ var keystone = require('keystone');
 
 var Orders = keystone.list('Orders');
 
-var stripeApiKey = "pk_test_kHoGL8M7zIJNVe7Sihgu6gvn";
-var stripeApiKeyTesting = "sk_test_fukZ8OeJjpS66nL7T8owpCq2";
+var stripeApiKey = "pk_live_3FEb8LMmyTB8RLuNvi4o8bbq";
+var stripeApiKeyTesting = "sk_live_Cmde6Gkp5WvmRsbdx3lM46yv";
 var stripe = require('stripe')(stripeApiKeyTesting);
 
 function orderNumGen(len){

@@ -7,11 +7,12 @@
 					<div id="myPictures" class="dropzone">
 						<div class="dz-message desktop" data-dz-message><span>Drop your photo here or</span><span id="browse">Browse computer</span></div>
 						<div class="dz-message mobile" data-dz-message><span id="browse">Select photo</span></div>
+						
+						<div id="notes">Please ensure your image is 2MB or less.</div>
 					</div>
 	            </div>
 				<div class="entry-details">
 					
-<!--
 					<div class="configurate" id="medium-config">
 						<div class="title">
 							Medium
@@ -27,7 +28,6 @@
 							</div>
 						</div>
 					</div>
--->
 					
 					<div class="configurate" id="colour-config">
 						<div class="title">
@@ -783,23 +783,23 @@
 							<div class="sides">
 								<div class="field">
 									<label><span>*</span> NAME ON CARD</label>
-									<input type="text" name="card-name" class="needed" placeholder="Name on card..."/>
+									<input type="text" id="card-name" name="card-name" class="needed" placeholder="Name on card..."/>
 								</div>
 								<div class="field">
 									<label><span>*</span> CARD NUMBER</label>
-									<input type="text" name="card-number" class="needed" placeholder="Card number..."/>
+									<input type="text" id="card-number" name="card-number" class="needed" placeholder="Card number..."/>
 								</div>
 								<div class="field exp">
 									<label><span>*</span> EXPIRY MONTH</label>
-									<input type="text" name="card-exp-month" class="needed" placeholder="Expiry month..."/>
+									<input type="text" id="expiry-month" name="card-exp-month" class="needed" placeholder="E.G 11"/>
 								</div>
 								<div class="field exp">
 									<label><span>*</span> EXPIRY YEAR</label>
-									<input type="text" name="card-exp-year" class="needed" placeholder="Expiry year..."/>
+									<input type="text" id="expiry-year" name="card-exp-year" class="needed" placeholder="E.G 2020"/>
 								</div>
 								<div class="field cvc">
 									<label><span>*</span> CVV</label>
-									<input type="text" name="card-cvc" class="needed" placeholder="CVV..."/>
+									<input type="text" id="security-code" name="card-cvc" class="needed" placeholder="CVV..."/>
 								</div>
 							</div>
 							<div class="actions">

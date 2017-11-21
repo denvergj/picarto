@@ -113,6 +113,18 @@
 		margin-top: -30px;
 		width: 25%;
 		font-family: $primary-font;
+		&.hittop { 
+		    top: 40px;
+	        width: 21%;
+			right: 8%;
+			position: fixed;
+		}
+		&.finished {
+			position: relative;
+			margin-top: 550px;
+		    width: 25%;
+			right: inherit;
+		}
 		.contain {
 			padding: 15px;
 		}
@@ -325,6 +337,9 @@
 .checkout-page {
 	#ordering {
 		.order-summary {
+			&.finished {
+				margin-top: 1050px;
+			}
 			img {
 				display: block;
 			}
@@ -427,7 +442,7 @@
 		.order-summary {
 			width: 100%;
 			position: fixed;
-			top: 51px;
+			top: 0;
 			display: none;
 			z-index: 99;
 			margin-left: -20px;

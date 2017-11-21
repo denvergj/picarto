@@ -3252,6 +3252,7 @@ $(function(){
 	    	uploadMultiple: false,
 	    	acceptedFiles:'.jpg,.png,.jpeg,.gif',
 	    	parallelUploads: 6,
+	    	maxFileSize: 2, //MB
 	    	url: 'https://api.cloudinary.com/v1_1/cloud9/image/upload',
 	    	addRemoveLinks: true
 	    });
@@ -3307,20 +3308,29 @@ $(function(){
   		// Get editing value.
   		$editing = $('#editing-config input:checked').val();
   		
+  		$background = $('#background-config input:checked').val();
+  		
   		$.ajax({
 	        url: "/api/pricing/",
 	        type: "post",
 	        data: {
 	        	characters: numberCharacters.val(),
 	        	size: sizeValue.val(),
-	        	editing: $editing
+	        	editing: $editing,
+	        	background: $background
 		    },
 	        success: function(data) {
 		        if(data !== 'not found') {
 			        $('#total .value').text('$'+data.pricing.price);
+			        
+			        $currentPrice = $('#total .value').text().replace('$','');
+			       
 		        }  
 	        }
 	    });
+	    
+	    
+	   
   		
   	});
     
@@ -3369,12 +3379,40 @@ $(function(){
 	 	
 	 	$currentPrice = $('#total .value').text().replace('$','');
 	 	if($editingValue == 'Yes') {
-		 	$totalVal = parseInt($currentPrice) + 70;
+		 	$totalVal = parseInt($currentPrice) + 75;
 		 	$('#total .value').text('$'+$totalVal);
 	 	} else {
-	 		$totalVal = parseInt($currentPrice) - 70;
+	 		$totalVal = parseInt($currentPrice) - 75;
 		 	$('#total .value').text('$'+$totalVal);
 	 	}
+	});
+	
+	$('#background-config input').on('ifChecked', function(event){
+	 	$background = $(this).val();
+	 	$sizeValue = $('#size-config select').val();
+	 	
+	 	$currentPrice = $('#total .value').text().replace('$','');
+	 	if($background == 'Detailed') {
+		 	if($sizeValue == '16x20') {
+			 	$totalVal = parseInt($currentPrice) + 50;
+		 	} else if($sizeValue == '20x24') {
+			 	$totalVal = parseInt($currentPrice) + 75;
+		 	} else {
+			 	$totalVal = parseInt($currentPrice) + 100;
+		 	}
+		 	
+		 	$('#total .value').text('$'+$totalVal);
+	 	} else {
+	 		if($sizeValue == '16x20') {
+			 	$totalVal = parseInt($currentPrice) - 50;
+		 	} else if($sizeValue == '20x24') {
+			 	$totalVal = parseInt($currentPrice) - 75;
+		 	} else {
+			 	$totalVal = parseInt($currentPrice) - 100;
+		 	}
+		 	$('#total .value').text('$'+$totalVal);
+	 	}
+	 	
 	});
 	
 	/******
@@ -3452,10 +3490,10 @@ $(function(){
 	* Functionality for making payments.
 	*
 	**********/
-	var publicStripeApiKey = 'pk_test_f2WSBbW3G918SlJvC9lCtgBk';
+	var publicStripeApiKey = 'pk_live_3FEb8LMmyTB8RLuNvi4o8bbq';
 	var publicStripeApiKeyTesting = 'pk_test_f2WSBbW3G918SlJvC9lCtgBk';
 	
-	Stripe.setPublishableKey(publicStripeApiKeyTesting);
+	Stripe.setPublishableKey(publicStripeApiKey);
 	
 	function stripeResponseHandler (status, response) {
 		
@@ -3519,6 +3557,69 @@ $(function(){
 	});
 	
 	
+	// Payment Information Restrictions
+	
+	$('input#card-name').keypress(function(event){
+        var inputValue = event.which;
+        // allow letters and whitespaces only.
+        if(!(inputValue >= 65 && inputValue <= 120) && (inputValue != 32 && inputValue != 0)) { 
+            event.preventDefault(); 
+        }
+    });
+    
+    $('input#card-number').keypress(function(event){
+        var inputValue = event.which;
+       if(inputValue >= 48 && inputValue <= 57) { 
+           	if($(this).val().length == 16) {
+	           	event.preventDefault();
+           	}
+        } else {
+	         event.preventDefault(); 
+        }
+    });
+    
+    $('input#expiry-month').keypress(function(event){
+        var inputValue = event.which;
+        if(inputValue >= 48 && inputValue <= 57) { 
+           	if($(this).val().length == 2) {
+	           	event.preventDefault(); 
+           	}
+        } else {
+	         event.preventDefault(); 
+        }
+    });
+    
+    $('input#expiry-year').keypress(function(event){
+        var inputValue = event.which;
+        if(inputValue >= 48 && inputValue <= 57) { 
+           	if($(this).val().length == 4) {
+	           	event.preventDefault(); 
+           	}
+        } else {
+	         event.preventDefault(); 
+        }
+    });
+    
+    
+    
+    $('input#security-code').keypress(function(event){
+        var inputValue = event.which;
+        // allow letters and whitespaces only.
+        if(inputValue >= 48 && inputValue <= 57) { 
+           	if($(this).val().length == 3) {
+	           	event.preventDefault(); 
+           	}
+        } else {
+	         event.preventDefault(); 
+        }
+    });
+	
+	$('input#expiry-month').keyup(function(){
+        if(this.value.length==$(this).attr("maxlength")){
+            $(this).next().focus();
+        }
+    });
+	
 	$("#ordering form").submit(function(event) {
 	 	
 	  	var numberCharacters = $('#number-of-characters-config select').val();
@@ -3528,6 +3629,9 @@ $(function(){
   	    
   	    // Get editing value.
   		$editing = $('#editing-config input:checked').val();
+  		
+  		// Get background value.
+  		$background = $('#background-config input:checked').val();
   	    
   	    // Get the price for the order.
 	    $.ajax({
@@ -3536,7 +3640,8 @@ $(function(){
 			data: {
 				characters: numberCharacters,
 				size: sizeValue,
-				editing: $editing
+				editing: $editing,
+				background: $background
 			},
 			success: function(data) {
 			    if(data !== 'not_found') {
@@ -3558,11 +3663,38 @@ $(function(){
 	
 	
 	$(window).scroll(function() { 
-        if ($(window).scrollTop() > 51) {
-            $('.order-summary').addClass('hittop');
-        } else {
-            $('.order-summary').removeClass('hittop');
+		if($(window).width() > 767) {
+			
+			
+			if($('.order-summary').offset().top + $('.order-summary').height() 
+	                                           >= $('footer').offset().top - 10) {
+	       $('.order-summary').removeClass('hittop');
+	       $('.order-summary').addClass('finished');
+	     //  $('.order-summary').css({'position': 'absolute', 'top':$(document).scrollTop()});
+	       }
+	    if($(document).scrollTop() + window.innerHeight < $('footer').offset().top) {
+		    //$('.order-summary').css({'position': 'fixed', 'top':'0'});
+	        $('.order-summary').addClass('hittop');
+	        $('.order-summary').removeClass('finished');
+	        }
+			
+	        if ($(window).scrollTop() > $('#medium-config').offset().top) {
+	            $('.order-summary').addClass('hittop');
+	        } else {
+	            $('.order-summary').removeClass('hittop');
+	           
+	        }
+	        
+	        if($('body').hasClass('checkout-page')) {
+		        if ($(window).scrollTop() > $('#billing-details').offset().top) {
+		            $('.order-summary').addClass('hittop');
+		        } else {
+		            $('.order-summary').removeClass('hittop');
+		        }
+	        }
+	        
         }
+        
     });
     
 });   
