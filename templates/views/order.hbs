@@ -1,14 +1,15 @@
 <div id="ordering">
 	<div class="content-container">
 		<div class="overlay"></div>
-		<form>
+		<img src="/dist/imgs/loader.png" class="loader" />
+		<form> 
 			<div id="order-page">
 				<div class="form-group">
 					<div id="myPictures" class="dropzone">
 						<div class="dz-message desktop" data-dz-message><span>Drop your photo here or</span><span id="browse">Browse computer</span></div>
 						<div class="dz-message mobile" data-dz-message><span id="browse">Select photo</span></div>
 						
-						<div id="notes">Please ensure your image is 2MB or less.</div>
+						<div id="notes">Max 3MB/photo. Only upload JPG, PNG, JPEG. Use multiple photos for references or collages/edits.<br/>Note; only one order can be placed at a time.</div>
 					</div>
 	            </div>
 				<div class="entry-details">
@@ -106,11 +107,11 @@
 						</div>
 						<div class="config-values">
 							<div class="inputs">
-								<input id="detailed" type="radio" name="background" value="Detailed"/>
+								<input id="detailed" type="radio" name="background" value="Detailed" checked/>
 								<label for="detailed">Detailed</label>
 							</div>
 							<div class="inputs">
-								<input id="simplified" type="radio" name="background" value="Simplified" checked/>
+								<input id="simplified" type="radio" name="background" value="Simplified"/>
 								<label for="simplified">Simplified</label>
 							</div>
 						</div>
@@ -747,6 +748,7 @@
 										<option value="Victoria">Victoria</option>
 										<option value="Western Australia">Western Australia</option>
 									</select>
+									<p id="rural">Deliveries to rural areas may be charged an additional AUD $30 for the courier. By clicking "Continue" you accept these terms.</p>
 								</div>
 							</div>
 							<div class="actions">
@@ -779,7 +781,7 @@
 						<div class="title">
 							Step 4: Payment Method
 						</div>
-						<div class="details" style="display:block;">
+						<div class="details">
 							<div class="sides">
 								<div class="field">
 									<label><span>*</span> NAME ON CARD</label>
@@ -835,7 +837,7 @@
 	            		ORDER SUMMARY
 	            	</div>
 	            	<div class="order-spec mobile" id="total">
-	            		<span class="value">$249</span>
+	            		<span class="value">$299</span>
 	            		<span class="title">Total (AUD)</span>
 	            	</div>
 	            	<div class="order-spec" id="medium">
@@ -864,7 +866,7 @@
 	            	</div>
 	            	<div class="order-spec desktop" id="total">
 	            		<span class="title">Total (AUD)</span>
-	            		<span class="value">$249</span>
+	            		<span class="value">$299</span>
 	            	</div>
             	</div>
             	<button id="checkout" class="desktop">
@@ -875,7 +877,7 @@
             <div class="mobile view-order">
             	<div id="total">
             		<span class="title"><img src="/dist/imgs/up-arrow.png"/></span>
-	            	<span class="value">$249</span>
+	            	<span class="value">$299</span>
 	            	<span class="close"><img src="/dist/imgs/down-arrow.png"/> Close</span>
             	</div>
             	<button id="checkout">

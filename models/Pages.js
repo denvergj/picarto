@@ -32,6 +32,7 @@ pages.add({
     howDoesStep1: { type: Types.Html, wysiwyg: true },
     howDoesStep2: { type: Types.Html, wysiwyg: true },
     howDoesStep3: { type: Types.Html, wysiwyg: true },
+    lastMinute: { type: Types.Html, wysiwyg: true },
     madeWithLoveImage: { type: Types.CloudinaryImage, dest: 'public/uploads'},
     madeWithLoveText: { type: Types.Html, wysiwyg: true },
 });

@@ -35,13 +35,13 @@
 		}
 		&#paintingExample {
 			#imageRevealer {
-			    max-width: 920px;
-				height: 568px;
+			    max-width: 1080px; 
+				height: 598px;
 				margin: 0 auto 50px auto;
 				overflow: hidden;
 				position: relative;
 				.changeImage {
-					display: none;
+					display: none; 
 					cursor: pointer;
 				    background: rgba(0,0,0,0.3);
 				    position: absolute;
@@ -161,7 +161,7 @@
 			}
 		}
 		&#how-does-it-work {
-			padding: 180px 0;
+			padding: 180px 0 40px 0;
 			text-align: center;
 			h3 { 
 				font-family: $primary-font;
@@ -200,6 +200,21 @@
 					font-size: 18px; 
 					margin-left: 10px;
 				}
+			}
+		}
+		&#last-minute {
+			max-width: 720px;
+		    margin: 0 auto;
+		    background: #fafafa;
+		    padding: 60px 120px;
+		    margin-bottom: 100px;
+			h2 {
+			    text-align: center;
+				margin-bottom: 30px;
+				color: #d94b77;
+			}
+			p {
+				text-align: center;
 			}
 		}
 	}
@@ -331,6 +346,10 @@
 					margin: 20px 0;
 					padding: 0;
 				}
+			}
+			&#last-minute {
+			    margin: 0 auto 40px;
+			    padding: 40px 10px;
 			}
 		}
 	}

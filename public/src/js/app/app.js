@@ -441,38 +441,36 @@ $(function(){
 	
 	
 	$(window).scroll(function() { 
-		if($(window).width() > 767) {
-			
-			
-			if($('.order-summary').offset().top + $('.order-summary').height() 
-	                                           >= $('footer').offset().top - 10) {
-	       $('.order-summary').removeClass('hittop');
-	       $('.order-summary').addClass('finished');
-	     //  $('.order-summary').css({'position': 'absolute', 'top':$(document).scrollTop()});
-	       }
-	    if($(document).scrollTop() + window.innerHeight < $('footer').offset().top) {
-		    //$('.order-summary').css({'position': 'fixed', 'top':'0'});
-	        $('.order-summary').addClass('hittop');
-	        $('.order-summary').removeClass('finished');
-	        }
-			
-	        if ($(window).scrollTop() > $('#medium-config').offset().top) {
-	            $('.order-summary').addClass('hittop');
-	        } else {
-	            $('.order-summary').removeClass('hittop');
-	           
-	        }
-	        
-	        if($('body').hasClass('checkout-page')) {
-		        if ($(window).scrollTop() > $('#billing-details').offset().top) {
+		if($('#ordering').length > 0){
+			if($(window).width() > 767) {
+				
+				if($('.order-summary').offset().top + $('.order-summary').height() 
+				                                   >= $('footer').offset().top - 10) {
+				   $('.order-summary').removeClass('hittop');
+				   $('.order-summary').addClass('finished');
+				}
+				
+			    if($(document).scrollTop() + window.innerHeight < $('footer').offset().top) {
+			        $('.order-summary').addClass('hittop');
+			        $('.order-summary').removeClass('finished');
+			    }
+				
+		        if ($(window).scrollTop() > $('#medium-config').offset().top) {
 		            $('.order-summary').addClass('hittop');
 		        } else {
 		            $('.order-summary').removeClass('hittop');
 		        }
+			        
+		        if($('body').hasClass('checkout-page')) {
+			        if ($(window).scrollTop() > $('#billing-details').offset().top) {
+			            $('.order-summary').addClass('hittop');
+			        } else {
+			            $('.order-summary').removeClass('hittop');
+			        }
+		        }
 	        }
-	        
         }
-        
     });
+    
     
 });   

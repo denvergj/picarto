@@ -162,6 +162,17 @@
 			}
 		}
 	}
+	#contact-success {
+		padding: 120px 0;
+		img {
+			max-width: 100px;
+		    margin: 0 auto 30px;
+		    display: block;
+		}
+		p {
+			font-size: 18px;
+		}
+	}
 }
 
 @media (max-width: 767px) {
@@ -221,6 +232,17 @@
 			.number {
 				width: 100%;
 				margin: 30px 0;
+			}
+		}
+		#contact-success {
+			padding: 80px 0;
+			img {
+				max-width: 100px;
+			    margin: 0 auto 30px;
+			    display: block;
+			}
+			p {
+				font-size: 16px;
 			}
 		}
 	}	

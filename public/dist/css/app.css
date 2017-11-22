@@ -9540,8 +9540,8 @@ footer {
       padding: 20px;
       line-height: 14px; }
   #home section#paintingExample #imageRevealer {
-    max-width: 920px;
-    height: 568px;
+    max-width: 1080px;
+    height: 598px;
     margin: 0 auto 50px auto;
     overflow: hidden;
     position: relative; }
@@ -9640,7 +9640,7 @@ footer {
           font-size: 15px;
           display: inline-block; }
   #home section#how-does-it-work {
-    padding: 180px 0;
+    padding: 180px 0 40px 0;
     text-align: center; }
     #home section#how-does-it-work h3 {
       font-family: "Glegoo", sans-serif;
@@ -9672,6 +9672,18 @@ footer {
       #home section#how-does-it-work a i {
         font-size: 18px;
         margin-left: 10px; }
+  #home section#last-minute {
+    max-width: 720px;
+    margin: 0 auto;
+    background: #fafafa;
+    padding: 60px 120px;
+    margin-bottom: 100px; }
+    #home section#last-minute h2 {
+      text-align: center;
+      margin-bottom: 30px;
+      color: #d94b77; }
+    #home section#last-minute p {
+      text-align: center; }
 
 @media (max-width: 1279px) and (min-width: 320px) {
   #home section#paintingExample #imageRevealer {
@@ -9752,7 +9764,10 @@ footer {
       #home section#how-does-it-work .step {
         width: 100%;
         margin: 20px 0;
-        padding: 0; } }
+        padding: 0; }
+    #home section#last-minute {
+      margin: 0 auto 40px;
+      padding: 40px 10px; } }
 
 #stories-page {
   margin-top: 40px; }
@@ -9955,6 +9970,15 @@ footer {
         #contact-page .call-us .number a:hover:after {
           border-bottom: 2px solid #d94b77; }
 
+#contact-page #contact-success {
+  padding: 120px 0; }
+  #contact-page #contact-success img {
+    max-width: 100px;
+    margin: 0 auto 30px;
+    display: block; }
+  #contact-page #contact-success p {
+    font-size: 18px; }
+
 @media (max-width: 767px) {
   #contact-page p {
     font-size: 16px;
@@ -9984,7 +10008,28 @@ footer {
     font-size: 20px; }
   #contact-page .call-us .number {
     width: 100%;
-    margin: 30px 0; } }
+    margin: 30px 0; }
+  #contact-page #contact-success {
+    padding: 80px 0; }
+    #contact-page #contact-success img {
+      max-width: 100px;
+      margin: 0 auto 30px;
+      display: block; }
+    #contact-page #contact-success p {
+      font-size: 16px; } }
+
+@-moz-keyframes spin {
+  100% {
+    -moz-transform: rotate(360deg); } }
+
+@-webkit-keyframes spin {
+  100% {
+    -webkit-transform: rotate(360deg); } }
+
+@keyframes spin {
+  100% {
+    -webkit-transform: rotate(360deg);
+    transform: rotate(360deg); } }
 
 #ordering {
   font-family: "Glegoo", sans-serif;
@@ -9994,12 +10039,28 @@ footer {
     overflow: hidden; }
   #ordering.processing .overlay {
     display: block; }
+  #ordering.processing img.loader {
+    display: block;
+    position: fixed;
+    margin: 0 auto;
+    max-width: 120px;
+    z-index: 99;
+    left: 50%;
+    margin-left: -60px;
+    top: 50%;
+    margin-top: -60px;
+    -webkit-animation: spin 2s linear infinite;
+    -moz-animation: spin 2s linear infinite;
+    animation: spin 2s linear infinite; }
   #ordering .overlay {
     background: #fff;
     opacity: 0.7;
+    z-index: 99;
     position: absolute;
     height: 100%;
     width: 100%;
+    display: none; }
+  #ordering img.loader {
     display: none; }
   #ordering #myPictures {
     margin: 30px auto 100px auto;
@@ -10027,6 +10088,9 @@ footer {
         font-size: 21px; }
     #ordering #myPictures .required-photos {
       color: red; }
+    #ordering #myPictures #notes {
+      line-height: 20px;
+      font-size: 14px; }
   #ordering .entry-details {
     width: 65%;
     float: left; }
@@ -10209,6 +10273,9 @@ footer {
               margin-top: 10px;
               font-size: 13px;
               color: red; }
+            #ordering #checkout-page .entry-details .sectors .details .sides .field p#rural {
+              margin-top: 15px;
+              font-size: 12px; }
         #ordering #checkout-page .entry-details .sectors .details .actions {
           float: left;
           clear: both;

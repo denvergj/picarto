@@ -1,3 +1,6 @@
+@-moz-keyframes spin { 100% { -moz-transform: rotate(360deg); } }
+@-webkit-keyframes spin { 100% { -webkit-transform: rotate(360deg); } }
+@keyframes spin { 100% { -webkit-transform: rotate(360deg); transform:rotate(360deg); } }
 #ordering {
 	font-family: $primary-font;
 	overflow: hidden;
@@ -9,14 +12,36 @@
 		.overlay {
 			display: block;
 		}
+		img {
+			&.loader {
+				display: block;
+			    position: fixed;
+			    margin: 0 auto;
+			    max-width: 120px;
+			    z-index: 99;
+			    left: 50%;
+			    margin-left: -60px;
+			    top: 50%;
+			    margin-top: -60px;
+			    -webkit-animation:spin 2s linear infinite;
+			    -moz-animation:spin 2s linear infinite;
+			    animation:spin 2s linear infinite;
+			}
+		}
 	}
 	.overlay {
 		background: #fff;
 		opacity: 0.7;
+		z-index: 99;
 		position: absolute;
 		height: 100%;
 		width: 100%;
 		display: none;
+	}
+	img {
+		&.loader {
+			display: none;
+		}
 	}
 	#myPictures {
 		margin: 30px auto 100px auto;
@@ -49,6 +74,10 @@
 		}
 		.required-photos {
 			color: red;
+		}
+		#notes {
+		    line-height: 20px;
+			font-size: 14px;
 		}
 	}
 	.entry-details {
@@ -192,7 +221,7 @@
 			cursor: pointer;
 		}
 		.entry-details {
-			.sectors {
+			.sectors { 
 				padding-bottom: 20px;
 				padding-top: 20px;
 				.title {
@@ -294,6 +323,12 @@
 							    margin-top: 10px;
 							    font-size: 13px;
 							    color: red;
+							}
+							p {
+								&#rural {
+								    margin-top: 15px;
+									font-size: 12px;
+								}
 							}
 						}
 					}

@@ -1,39 +1,39 @@
 <div id="home">
-	<div class="content-container">
 	{{# each data.home.results}}
-		<section id="slogan">
-			{{{content.slogan}}}
-			<img src="{{cloudinaryUrl content.sloganImage }}" />
-		</section>
-		
-		<section id="introduction">
-			{{{content.introduction}}}
-		</section>
-		
-		<section id="paintingExample">
-			<div id="imageRevealer" class="pic1">
-				<div class="changeImage">View Original</div>
-				<img src="/dist/imgs/wall-art-from-a-photo.jpg" title="Oil | Before - Original Photo" width="920" alt="Personalized wall art" height="568" class="original">
-				<img src="/dist/imgs/wall-art-from-a-photo-to-painting.jpg" title="Oil | After - Painted with Picarto" width="920" height="568" alt="Personalized art" class="new">
-			</div>
-			<div class="caption">
-				{{{content.paintingExampleText}}}
-			</div>
-		</section>
-		
-		<section id="enticeExamples">
-			<div class="textSection xlarge pink fadedMemories" style="background-image:url({{cloudinaryUrl fadedMemoriesImage }})">
-				<div class="innerContent">
-					{{{fadedMemoriesText}}}
+		<div class="content-container">
+			<section id="slogan">
+				{{{content.slogan}}}
+				<img src="{{cloudinaryUrl content.sloganImage }}" />
+			</section>
+			
+			<section id="introduction">
+				{{{content.introduction}}}
+			</section>
+			
+			<section id="paintingExample">
+				<div id="imageRevealer" class="pic1">
+					<div class="changeImage">View Original</div>
+					<img src="/dist/imgs/original-photo.jpg" title="Oil | Before - Original Photo" width="1080" alt="Personalized wall art" height="598" class="original">
+					<img src="/dist/imgs/painted-photo.jpg" title="Oil | After - Painted with Picarto" width="1080" height="598" alt="Personalized art" class="new">
 				</div>
-			</div>
-			<div class="textSection xlarge pink lovedTogether" style="background-image:url({{cloudinaryUrl lovedOnesImage }})">
-				<div class="innerContent">
-					{{{lovedOnesText}}}
+				<div class="caption">
+					{{{content.paintingExampleText}}}
 				</div>
-			</div>
-		</section>
-	</div>
+			</section>
+			
+			<section id="enticeExamples">
+				<div class="textSection xlarge pink fadedMemories" style="background-image:url({{cloudinaryUrl fadedMemoriesImage }})">
+					<div class="innerContent">
+						{{{fadedMemoriesText}}}
+					</div>
+				</div>
+				<div class="textSection xlarge pink lovedTogether" style="background-image:url({{cloudinaryUrl lovedOnesImage }})">
+					<div class="innerContent">
+						{{{lovedOnesText}}}
+					</div>
+				</div>
+			</section>
+		</div>
 	
 		<section class="largeImageWithText" id="married" style="background-image:url({{cloudinaryUrl marriedImage }});background-repeat:no-repeat;">
 			<div class="content">
@@ -55,6 +55,10 @@
 					{{{howDoesStep3}}}
 				</div>
 
+			</section>
+			
+			<section id="last-minute">
+				{{{lastMinute}}}
 			</section>
 		</div>
 		
