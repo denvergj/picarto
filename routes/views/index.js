@@ -7,6 +7,7 @@ exports = module.exports = function(req, res) {
 
     // Init locals
     locals.section = 'home';
+    
     locals.data = {
         home: []
     };
@@ -19,6 +20,7 @@ exports = module.exports = function(req, res) {
             .sort('-publishedDate');
         q.exec(function(err, results) {
             locals.data.home = results;
+            locals.title = results.results[0].tabTitle;
             next(err);
         });
 		
@@ -48,6 +50,7 @@ exports.privacy = function(req, res) {
             .sort('-publishedDate');
         q.exec(function(err, results) {
             locals.data.home = results;
+			locals.title = 'Privacy Policy | Picarto';
             next(err);
         });
 		

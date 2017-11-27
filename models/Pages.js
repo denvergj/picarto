@@ -13,12 +13,14 @@ var pages = new keystone.List('pages', {
 
 pages.add({
     title: { type: String, required: true },
+    tabTitle: { type: String, initial: false },
     state: { type: Types.Select, options: 'draft, published', default: 'published', index: true },
     author: { type: Types.Relationship, ref: 'User', index: true },
     publishedDate: { type: Types.Date, index: true, dependsOn: { state: 'published' } },
     content: {
         slogan: { type: Types.Html, wysiwyg: true },
         sloganImage: { type: Types.CloudinaryImage, dest: 'public/uploads'},
+        sloganImageAlt: { type: String, initial: false},
         introduction: { type: Types.Html, wysiwyg: true },
         paintingExampleText: { type: Types.Html, wysiwyg: true },
     },

@@ -57,6 +57,14 @@ exports = module.exports = function (req, res) {
 	// Load the posts
 	view.on('init', function (next) {
 
+		var stories = keystone.list('pages').paginate()
+            .where('state', 'published')
+            .where('slug', 'stories')
+            .sort('-publishedDate');
+        stories.exec(function(err, results) {
+			locals.title = results.results[0].tabTitle;
+        });
+
 		var q = keystone.list('Post').paginate({
 			page: req.query.page || 1,
 			perPage: 10,

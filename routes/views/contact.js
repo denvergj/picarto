@@ -13,6 +13,19 @@ exports = module.exports = function (req, res) {
 	locals.validationErrors = {};
 	locals.enquirySubmitted = false;
 
+	view.on('init', function(next) {
+
+       var q = keystone.list('pages').paginate()
+            .where('state', 'published')
+            .where('slug', 'contact')
+            .sort('-publishedDate');
+        q.exec(function(err, results) {
+			locals.title = results.results[0].tabTitle;
+            next(err);
+        });
+		
+    });
+
 	// On POST requests, add the Enquiry item to the database
 	view.on('post', { action: 'contact' }, function (next) {
 

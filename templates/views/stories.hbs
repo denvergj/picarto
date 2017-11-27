@@ -5,7 +5,7 @@
 				<h2>{{{title}}}</h2>
 				<p class="date">{{formattedDate}}</p>
 				{{#if featuredImage}}
-					<img src="{{{cloudinaryUrl featuredImage crop='fit'}}}" class="featured">
+					<img src="{{{cloudinaryUrl featuredImage crop='fit'}}}" class="featured" alt="{{featuredImageAlt}}">
 				{{/if}}
 				{{#if content.text}}
 					<div class="content text">
@@ -17,15 +17,13 @@
 						<div class="the-og">
 							<p>ORIGINAL</p>
 						</div>
-						<img src="{{{cloudinaryUrl content.originalImage crop='fit'}}}" class="original">
+						<img src="{{{cloudinaryUrl content.originalImage crop='fit'}}}" class="original" alt="{{content.originalImageAlt}}">
 					</div>
 				{{/if}}
 			</article>
-			{{#if data.posts.results.length}}
-				<div class="splitter">
-					<img src="/dist/imgs/splitter.jpg" />
-				</div>
-			{{/if}}
+			<div class="splitter">
+				<img src="/dist/imgs/splitter.jpg" />
+			</div>
 		{{/each}}
 	</div>
 </div>

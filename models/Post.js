@@ -17,9 +17,11 @@ Post.add({
 	author: { type: Types.Relationship, ref: 'User', index: true },
 	publishedDate: { type: Types.Date, index: true, dependsOn: { state: 'published' } },
 	featuredImage: { type: Types.CloudinaryImage },
+	featuredImageAlt: { type: String, initial: false},
 	content: {
 		text: { type: Types.Html, wysiwyg: true, height: 150 },
 		originalImage: { type: Types.CloudinaryImage },
+		originalImageAlt: { type: String, initial: false}
 	},
 	//categories: { type: Types.Relationship, ref: 'PostCategory', many: true },
 });
