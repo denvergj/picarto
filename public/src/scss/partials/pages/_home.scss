@@ -128,6 +128,13 @@
 					padding: 15% 0;
 				}
 			}
+			&#married {
+				a {
+					&:after {
+						margin-left: 10px;
+					}
+				}
+			}
 			.content {
 				margin: 0 auto;
 				max-width: 600px;

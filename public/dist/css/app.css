@@ -9614,6 +9614,8 @@ footer {
     margin: 0 auto; }
     #home section.largeImageWithText#married .content, #home section.largeImageWithText#madewithlove .content {
       padding: 15% 0; }
+    #home section.largeImageWithText#married a:after {
+      margin-left: 10px; }
     #home section.largeImageWithText .content {
       margin: 0 auto;
       max-width: 600px; }
@@ -10086,7 +10088,8 @@ footer {
         padding-bottom: 15px;
         margin: 0 auto;
         font-size: 21px; }
-    #ordering #myPictures .required-photos {
+    #ordering #myPictures .required-photos,
+    #ordering #myPictures .files-exceeded {
       color: red; }
     #ordering #myPictures #notes {
       line-height: 20px;

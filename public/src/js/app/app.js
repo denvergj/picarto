@@ -30,6 +30,11 @@ $(function(){
 	    	uploadMultiple: false,
 	    	acceptedFiles:'.jpg,.png,.jpeg,.gif',
 	    	parallelUploads: 6,
+	    	maxFiles: 6,
+	    	maxfilesexceeded: function(file) {
+		    	this.removeFile(file);
+		        $('#myPictures').append('<div class="files-exceeded">You cannot add more than 6 photos.</div>');
+		    },
 	    	maxFileSize: 2, //MB
 	    	url: 'https://api.cloudinary.com/v1_1/cloud9/image/upload',
 	    	addRemoveLinks: true
@@ -106,9 +111,6 @@ $(function(){
 		        }  
 	        }
 	    });
-	    
-	    
-	   
   		
   	});
     
@@ -129,7 +131,7 @@ $(function(){
 			$('#order-page,#checkout').hide();
 			$('#checkout-page').show();
 			$('body').addClass('checkout-page');
-			$('#myPictures .required-photos,.order-summary img').remove();
+			$('#myPictures .required-photos,.order-summary img,.files-exceeded').remove();
 			$('<img src="'+$uploadedImage+'"/>').insertAfter('.order-summary .mobile#total');
 		} else {
 			$('#myPictures').append('<div class="required-photos">Please remember to add an image</div>');
@@ -193,6 +195,8 @@ $(function(){
 	 	
 	});
 	
+	
+	
 	/******
 	*
 	* Functionality for stepping through the checkout form.
@@ -200,6 +204,7 @@ $(function(){
 	**********/
 	$(document).on('click','.actions .continue',function(e){
 		e.preventDefault();
+		
 		var $stepGroup = $(this).parent().parent().parent();
 		var $nextStepGroup = $('#'+$(this).attr('data-next'));
 		$(this).parent().parent().find("input[type=text]").each(function() {
@@ -221,7 +226,14 @@ $(function(){
 			        $(this).parent().parent().find("input[type=text]").each(function(i,val) {
 				        i++;
 						$('#delivery-details input#copy'+i).val($(this).val());
+						
 			        });
+			        $billingCountry = $('#billing-details #billing-country').val();
+			        $billingRegion = $('#billing-details #billing-region').val();
+			        
+			        
+			        $('#delivery-details select#delivery-country').val($billingCountry).selectric('refresh');
+			        $('#delivery-details select#delivery-region').val($billingRegion).selectric('refresh');
 		        }
 	        }
 	        $nextStepGroup.find('.details').show();
