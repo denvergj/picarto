@@ -36,14 +36,18 @@ exports.pay = function(req, res) {
    }
    
    var orderId = orderNumGen(5);
-   
-   
-   console.log(window.location.href);
+   		
+   		
+   	// TESTING LIVE CARDS.	
+    if(!req.user) {
+		var chargeAmount = data.stripeAmount * 100;
+	} else {
+		var chargeAmount = 200;
+	}
    
 	// Attempt to charge the card.
-/*
 	stripe.charges.create({
-	  amount: data.stripeAmount * 100,
+	  amount: chargeAmount,
 	  currency: "AUD",
 	  source: stripeToken,
 	  metadata: {order_id: orderId},
@@ -97,6 +101,5 @@ exports.pay = function(req, res) {
 			
 		}
 	});
-*/
 
 }
