@@ -131,9 +131,15 @@
 		  Stripe.setPublishableKey('pk_test_kHoGL8M7zIJNVe7Sihgu6gvn');
 		</script>
 		<script src="/dist/js/main.min.js"></script>
+		<!-- Global site tag (gtag.js) - Google Analytics -->
+		<script async src="https://www.googletagmanager.com/gtag/js?id=UA-57222202-1"></script>
+		<script>
+		  window.dataLayer = window.dataLayer || [];
+		  function gtag(){dataLayer.push(arguments);}
+		  gtag('js', new Date());
 		
-		
-		
+		  gtag('config', 'UA-57222202-1');
+		</script>
 		{{{isAdminEditorJS user}}}
 	</body>
 </html>

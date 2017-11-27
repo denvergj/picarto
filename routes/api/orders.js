@@ -38,7 +38,10 @@ exports.pay = function(req, res) {
    var orderId = orderNumGen(5);
    
    
+   console.log(window.location.href);
+   
 	// Attempt to charge the card.
+/*
 	stripe.charges.create({
 	  amount: data.stripeAmount * 100,
 	  currency: "AUD",
@@ -94,5 +97,6 @@ exports.pay = function(req, res) {
 			
 		}
 	});
+*/
 
 }
