@@ -39,7 +39,7 @@
 			line-height: 33px;
 			&.moved {
 				position: relative;
-				top: -11px;
+				top: 0;
 			}	
 		}
 		.form-field {
@@ -47,6 +47,7 @@
 			.selectric-wrapper {
 				display: inline-block;
 				margin-bottom: 15px;
+				top:10px;
 				.selectric {
 					background: #fff;
 				    border: none;

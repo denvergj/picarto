@@ -43,6 +43,9 @@
 			display: none;
 		}
 	}
+	.dropzone .dz-preview.dz-image-preview .dz-details {
+		opacity: 1;
+	}
 	#myPictures {
 		margin: 30px auto 100px auto;
 		text-align: center;
@@ -145,15 +148,16 @@
 		font-family: $primary-font;
 		&.hittop { 
 		    top: 40px;
-	        width: 21%;
-			right: 8%;
+	        width: 265px;
 			position: fixed;
+			transform: translate(300%,0%);
 		}
 		&.finished {
 			position: relative;
 			margin-top: 550px;
 		    width: 25%;
 			right: inherit;
+			transform: initial;
 		}
 		.contain {
 			padding: 15px;
@@ -489,6 +493,9 @@
 			height: 600px;
 			&.hittop {
 				top: 0px;
+				width: 100%;
+				position: fixed;
+				transform: initial;
 			}
 			.order-spec {
 				font-size: 15px;

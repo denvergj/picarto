@@ -9876,12 +9876,13 @@ footer {
     line-height: 33px; }
     #contact-page form p.moved {
       position: relative;
-      top: -11px; }
+      top: 0; }
   #contact-page form .form-field {
     display: inline; }
     #contact-page form .form-field .selectric-wrapper {
       display: inline-block;
-      margin-bottom: 15px; }
+      margin-bottom: 15px;
+      top: 10px; }
       #contact-page form .form-field .selectric-wrapper .selectric {
         background: #fff;
         border: none;
@@ -10064,6 +10065,8 @@ footer {
     display: none; }
   #ordering img.loader {
     display: none; }
+  #ordering .dropzone .dz-preview.dz-image-preview .dz-details {
+    opacity: 1; }
   #ordering #myPictures {
     margin: 30px auto 100px auto;
     text-align: center;
@@ -10152,14 +10155,15 @@ footer {
     font-family: "Glegoo", sans-serif; }
     #ordering .order-summary.hittop {
       top: 40px;
-      width: 21%;
-      right: 8%;
-      position: fixed; }
+      width: 265px;
+      position: fixed;
+      transform: translate(300%, 0%); }
     #ordering .order-summary.finished {
       position: relative;
       margin-top: 550px;
       width: 25%;
-      right: inherit; }
+      right: inherit;
+      transform: initial; }
     #ordering .order-summary .contain {
       padding: 15px; }
     #ordering .order-summary div.title {
@@ -10382,7 +10386,10 @@ footer {
       padding-top: 15px;
       height: 600px; }
       #ordering .order-summary.hittop {
-        top: 0px; }
+        top: 0px;
+        width: 100%;
+        position: fixed;
+        transform: initial; }
       #ordering .order-summary .order-spec {
         font-size: 15px;
         border-bottom: 1px solid #e6e6e6;

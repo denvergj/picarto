@@ -86,6 +86,8 @@ $(function(){
 	  		
 	  		// Refresh Selectric
 		    $('select#characters').selectric('refresh');
+		    
+		    $('#characters .value').text(numberCharacters.parent().parent().find('.label').text());
   		}
   		
   		// Get editing value.
@@ -269,10 +271,15 @@ $(function(){
 		         				.append(region.region)
 		                     	.appendTo($("#billing-region,#delivery-country"));
 		    });
+		    //$('#billing-region').prepend('<option value="choose">Select region / state</option>');
 		   // Refresh Selectric
 		   $('#billing-region,#delivery-country').selectric('refresh');
 	    }); 
+	    $('#billing-region').prepend('<option value="choose">Select region / state</option>');
+		   // Refresh Selectric
+		   $('#billing-region,#delivery-country').selectric('refresh');
   	});
+	
 	
 	
 	/******
@@ -486,3 +493,16 @@ $(function(){
     
     
 });   
+
+
+
+var myEvent = window.attachEvent || window.addEventListener;
+var chkevent = window.attachEvent ? 'onbeforeunload' : 'beforeunload'; /// make IE7, IE8 compatable
+ 
+myEvent(chkevent, function(e) { // For >=IE7, Chrome, Firefox
+	if($('#order-page').length > 0) {
+	    var confirmationMessage = ' ';  // a space
+	    (e || window.event).returnValue = confirmationMessage;
+	    return confirmationMessage;
+    }
+});
