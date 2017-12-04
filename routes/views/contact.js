@@ -24,19 +24,11 @@ exports = module.exports = function (req, res) {
             .where('slug', 'contact')
             .sort('-publishedDate');
         q.exec(function(err, results) {
-	      //  locals.data.contact = results;
-			locals.title = results.results[0].tabTitle;
-           // next(err);
-        });
-        
-        var a = keystone.list('pages').paginate()
-            .where('state', 'published')
-            .where('slug', 'home')
-            .sort('-publishedDate');
-        a.exec(function(err, results) {
 	        locals.data.contact = results;
+			locals.title = results.results[0].tabTitle;
             next(err);
         });
+        
 		
     });
 
