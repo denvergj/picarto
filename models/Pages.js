@@ -37,6 +37,8 @@ pages.add({
     lastMinute: { type: Types.Html, wysiwyg: true },
     madeWithLoveImage: { type: Types.CloudinaryImage, dest: 'public/uploads'},
     madeWithLoveText: { type: Types.Html, wysiwyg: true },
+    australianNumber: { type: String },
+    internationalNumber: { type: String }
 });
 
 pages.schema.virtual('content.full').get(function() {

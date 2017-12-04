@@ -10067,6 +10067,12 @@ footer {
     display: none; }
   #ordering .dropzone .dz-preview.dz-image-preview .dz-details {
     opacity: 1; }
+  #ordering .dropzone .dz-preview .dz-details .dz-filename {
+    position: absolute;
+    bottom: -80px; }
+    #ordering .dropzone .dz-preview .dz-details .dz-filename span {
+      margin-left: 0;
+      padding-left: 0; }
   #ordering #myPictures {
     margin: 30px auto 100px auto;
     text-align: center;

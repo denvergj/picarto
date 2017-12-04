@@ -51,15 +51,17 @@
 			</div>
 			
 			<div class="call-us">
+				{{# each data.contact.results}}
 				<h3>Or if you would like to give us a call, that’s cool too!</h3>
 				<div class="number">
 					<p>AUSTRALIA</p>
-					<a href="tel:1300 476 407">1300 476 407</a>
+					<a href="tel:{{{australianNumber}}}">{{{australianNumber}}}</a>
 				</div>
 				<div class="number">
 					<p>INTERNATIONAL</p>
-					<a href="tel:(+61) 0424 231 52">(+61) 0424 231 529</a>
+					<a href="tel:{{{internationalNumber}}}">{{{internationalNumber}}}</a>
 				</div>
+				{{/each}}
 			</div>
 			
 		{{/if}}

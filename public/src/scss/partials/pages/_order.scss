@@ -46,6 +46,14 @@
 	.dropzone .dz-preview.dz-image-preview .dz-details {
 		opacity: 1;
 	}
+	.dropzone .dz-preview .dz-details .dz-filename {
+		position: absolute;
+	    bottom: -80px;
+	    span {
+	        margin-left: 0;
+			padding-left: 0;
+	    }
+	}
 	#myPictures {
 		margin: 30px auto 100px auto;
 		text-align: center;
