@@ -12,8 +12,6 @@ exports.signup = function(req, res) {
  
  	var list = mailgun.lists(`newsletter@${DOMAIN}`);
  	
- 	console.log();
- 	
 	var requestUser = {
 	  subscribed: true,
 	  address: req.body.emailAddress

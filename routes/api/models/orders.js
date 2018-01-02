@@ -14,7 +14,7 @@ var Orders = new keystone.List('Orders', {
 Orders.add({
 	orderId: { type: String, required: true },
 	image: { type: Types.TextArray },
-	//medium: { type: String, required: true },
+	medium: { type: String, required: true },
 	colour: { type: String, required: true },
 	size: { type: String, required: true },
 	characters: { type: String, required: true },
@@ -74,8 +74,6 @@ Orders.schema.methods.sendNotificationEmail = function (callback) {
 	var order = this;
 	var brand = keystone.get('brand');
 
-	console.log(order);
-
 	// Send email to site admin.
 	keystone.list('User').model.find().where('isAdmin', true).exec(function (err, admins) {
 		if (err) return callback(err);
@@ -83,7 +81,7 @@ Orders.schema.methods.sendNotificationEmail = function (callback) {
 			templateName: 'order-received',
 			transport: 'mailgun',
 		}).send({
-			to: admins,
+			to: 'service@picarto.co',
 			from: {
 				name: 'Picarto',
 				email: 'service@picarto.co',

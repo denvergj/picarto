@@ -37,7 +37,6 @@ exports.pay = function(req, res) {
    
    var orderId = orderNumGen(5);
    		
-   		
    	// TESTING LIVE CARDS.	
     if(!req.user) {
 		var chargeAmount = data.stripeAmount * 100;
@@ -61,7 +60,7 @@ exports.pay = function(req, res) {
 			orderModel.set({
 				orderId: orderId,
 				image: data.enquiryImages,
-				//medium: data.medium,
+				medium: data.medium,
 				colour: data.colour,
 				size: data.size,
 				characters: data.characters,
