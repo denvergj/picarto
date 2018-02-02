@@ -83,9 +83,13 @@
 			    font-size: 21px;
 			}
 		}
+		.dz-filename {
+			display: none;
+		}
 		.required-photos,
 		.files-exceeded {
 			color: red;
+			margin-top: 30px;
 		}
 		#notes {
 		    line-height: 20px;
@@ -423,6 +427,19 @@
 		#ordering {
 			.view-order {
 				display: none;
+			}
+		}
+		.entry-details {
+			.sectors {
+				.details {
+					.actions {
+						.field {
+							width: 100%;
+						    margin-top: -50px;
+						    margin-bottom: 50px;
+						}
+					}
+				}
 			}
 		}
 	}

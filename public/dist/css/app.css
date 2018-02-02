@@ -9398,6 +9398,7 @@ header {
       header .popupmenu.is-active {
         display: block; }
       header .popupmenu #stories,
+      header .popupmenu #how-it-works,
       header .popupmenu #contact {
         display: block; }
       header .popupmenu #orderNow {
@@ -9408,6 +9409,7 @@ header {
         header .popupmenu li a {
           font-size: 24px; }
     header #stories,
+    header #how-it-works,
     header #contact {
       display: none; } }
 
@@ -10097,9 +10099,12 @@ footer {
         padding-bottom: 15px;
         margin: 0 auto;
         font-size: 21px; }
+    #ordering #myPictures .dz-filename {
+      display: none; }
     #ordering #myPictures .required-photos,
     #ordering #myPictures .files-exceeded {
-      color: red; }
+      color: red;
+      margin-top: 30px; }
     #ordering #myPictures #notes {
       line-height: 20px;
       font-size: 14px; }
@@ -10340,6 +10345,10 @@ footer {
 @media (max-width: 767px) {
   .checkout-page #ordering .view-order {
     display: none; }
+  .checkout-page .entry-details .sectors .details .actions .field {
+    width: 100%;
+    margin-top: -50px;
+    margin-bottom: 50px; }
   #ordering {
     background: #fafafa;
     margin-top: -40px; }

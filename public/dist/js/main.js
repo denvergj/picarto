@@ -3247,6 +3247,15 @@ $(function(){
 		$('.popupmenu').toggleClass('is-active'); 
 	});
 	
+	$(document).on('click','#how-it-works',function(e){
+		e.preventDefault();
+		$('.popupmenu,.hamburger').removeClass('is-active'); 
+		$('html, body').animate({
+	        scrollTop: $('#how-does-it-work').offset().top
+	    }, 500);
+	});
+	
+	
 	if($('#myPictures').length > 0) {
 		var myDropzone = new Dropzone(document.getElementById('myPictures'), {
 	    	uploadMultiple: false,
@@ -3256,6 +3265,7 @@ $(function(){
 	    	maxfilesexceeded: function(file) {
 		    	this.removeFile(file);
 		        $('#myPictures').append('<div class="files-exceeded">You cannot add more than 6 photos.</div>');
+		        setTimeout(function(){ $(".files-exceeded").fadeOut(); }, 10000);
 		    },
 	    	maxFileSize: 2, //MB
 	    	url: 'https://api.cloudinary.com/v1_1/cloud9/image/upload',
