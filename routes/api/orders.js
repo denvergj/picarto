@@ -41,7 +41,7 @@ exports.pay = function(req, res) {
     if(!req.user) {
 		var chargeAmount = data.stripeAmount * 100;
 	} else {
-		var chargeAmount = 200;
+		var chargeAmount = 100;
 	}
    
 	// Attempt to charge the card.

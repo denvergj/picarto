@@ -9577,7 +9577,8 @@ footer {
         content: "\e079";
         font-family: 'simple-line-icons';
         font-size: 15px;
-        display: inline-block; }
+        display: inline-block;
+        margin-left: 10px; }
   #home section#enticeExamples {
     margin: 150px 0 50px 0;
     overflow: hidden; }
@@ -10169,6 +10170,12 @@ footer {
       width: 265px;
       position: fixed;
       transform: translate(300%, 0%); }
+      #ordering .order-summary.hittop.hitbottom {
+        position: relative;
+        margin-top: 450px;
+        width: 25%;
+        right: inherit;
+        transform: initial; }
     #ordering .order-summary.finished {
       position: relative;
       margin-top: 550px;

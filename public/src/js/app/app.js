@@ -28,9 +28,13 @@ $(function(){
 	$(document).on('click','#how-it-works',function(e){
 		e.preventDefault();
 		$('.popupmenu,.hamburger').removeClass('is-active'); 
-		$('html, body').animate({
-	        scrollTop: $('#how-does-it-work').offset().top
-	    }, 500);
+		if(window.location.pathname !== '/') {
+			window.location.href = '/#how-does-it-work';
+		} else {
+			$('html, body').animate({
+		        scrollTop: $('#how-does-it-work').offset().top
+		    }, 500);
+	    }
 	});
 	
 	
@@ -494,7 +498,14 @@ $(function(){
 			        if ($(window).scrollTop() > $('#billing-details').offset().top) {
 			            $('.order-summary').addClass('hittop');
 			        } else {
-			            $('.order-summary').removeClass('hittop');
+				        $('.order-summary').removeClass('hittop');
+			        }
+			        
+			        
+			        if($(window).scrollTop() + $(window).height() > $(document).height() - 200) {
+				        $('.order-summary').addClass('hitbottom');
+			        } else {
+				         $('.order-summary').removeClass('hitbottom');
 			        }
 		        }
 	        }

@@ -163,6 +163,13 @@
 	        width: 265px;
 			position: fixed;
 			transform: translate(300%,0%);
+			&.hitbottom {
+				position: relative;
+				margin-top: 450px;
+			    width: 25%;
+				right: inherit;
+				transform: initial;
+			}
 		}
 		&.finished {
 			position: relative;
