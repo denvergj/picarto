@@ -63,7 +63,25 @@
 			padding: 20px 0;
 		}
 		.dz-error-message {
-			top: 40px;
+			top: 15px;
+			opacity: 1;
+			&:after {
+				display: none;
+			}
+			span {
+				margin: 10px auto;
+				width: 87px;
+			}
+		}
+		.dz-progress {
+			width: 0;
+			border: 1px solid #d0185b;
+			background: #d0185b;
+			padding: 0;
+		    max-width: 100px;
+		    margin: 0 auto;
+		    margin-left: -50px;
+		    left: 50%;
 		}
 		.dz-remove {
 			margin-top: 10px;
@@ -161,8 +179,8 @@
 		&.hittop { 
 		    top: 40px;
 	        width: 265px;
-			position: fixed;
-			transform: translate(300%,0%);
+			position: absolute;
+			right: 0;
 			&.hitbottom {
 				position: relative;
 				margin-top: 450px;

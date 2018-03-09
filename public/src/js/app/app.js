@@ -49,7 +49,13 @@ $(function(){
 		        $('#myPictures').append('<div class="files-exceeded">You cannot add more than 6 photos.</div>');
 		        setTimeout(function(){ $(".files-exceeded").fadeOut(); }, 10000);
 		    },
-	    	maxFileSize: 2, //MB
+	    	maxFilesize: 5, //MB
+	    	init: function() {
+		      this.on("uploadprogress", function(file, progress) {
+		        $('.dz-progress').width(progress + "%");
+		        console.log("File progress", progress);
+		      });
+		    },
 	    	url: 'https://api.cloudinary.com/v1_1/cloud9/image/upload',
 	    	addRemoveLinks: true
 	    });
@@ -247,6 +253,8 @@ $(function(){
 			        $billingCountry = $('#billing-details #billing-country').val();
 			        $billingRegion = $('#billing-details #billing-region').val();
 			        
+			        console.log($billingCountry);
+			        console.log($billingRegion);
 			        
 			        $('#delivery-details select#delivery-country').val($billingCountry).selectric('refresh');
 			        $('#delivery-details select#delivery-region').val($billingRegion).selectric('refresh');
@@ -289,9 +297,10 @@ $(function(){
 		   // Refresh Selectric
 		   $('#billing-region,#delivery-country').selectric('refresh');
 	    }); 
+	  
 	    $('#billing-region').prepend('<option value="choose">Select region / state</option>');
-		   // Refresh Selectric
-		   $('#billing-region,#delivery-country').selectric('refresh');
+	    // Refresh Selectric
+	    $('#billing-region,#delivery-country').selectric('refresh');
   	});
 	
 	
@@ -303,6 +312,11 @@ $(function(){
 	**********/
 	var publicStripeApiKey = 'pk_live_3FEb8LMmyTB8RLuNvi4o8bbq';
 	var publicStripeApiKeyTesting = 'pk_test_f2WSBbW3G918SlJvC9lCtgBk';
+	
+/*
+	var publicStripeApiKey = 'pk_test_f2WSBbW3G918SlJvC9lCtgBk';
+	var publicStripeApiKeyTesting = 'pk_test_f2WSBbW3G918SlJvC9lCtgBk';
+*/
 	
 	Stripe.setPublishableKey(publicStripeApiKey);
 	
@@ -485,6 +499,7 @@ $(function(){
 				
 			    if($(document).scrollTop() + window.innerHeight < $('footer').offset().top) {
 			        $('.order-summary').addClass('hittop');
+			        $('.order-summary').css({top:$(document).scrollTop()});
 			        $('.order-summary').removeClass('finished');
 			    }
 				

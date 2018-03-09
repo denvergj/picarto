@@ -9735,11 +9735,13 @@ footer {
       #home section#enticeExamples .fadedMemories,
       #home section#enticeExamples .lovedTogether {
         background-size: 100%;
-        height: 270px; }
+        height: 270px;
+        background-image: none !important; }
         #home section#enticeExamples .fadedMemories .innerContent,
         #home section#enticeExamples .lovedTogether .innerContent {
           width: 100%;
-          margin-top: 200px !important;
+          margin-top: 20px !important;
+          margin-bottom: 30px !important;
           text-align: center; }
       #home section#enticeExamples .textSection h3 {
         font-size: 28px;
@@ -10084,7 +10086,22 @@ footer {
     #ordering #myPictures .dz-message {
       padding: 20px 0; }
     #ordering #myPictures .dz-error-message {
-      top: 40px; }
+      top: 15px;
+      opacity: 1; }
+      #ordering #myPictures .dz-error-message:after {
+        display: none; }
+      #ordering #myPictures .dz-error-message span {
+        margin: 10px auto;
+        width: 87px; }
+    #ordering #myPictures .dz-progress {
+      width: 0;
+      border: 1px solid #d0185b;
+      background: #d0185b;
+      padding: 0;
+      max-width: 100px;
+      margin: 0 auto;
+      margin-left: -50px;
+      left: 50%; }
     #ordering #myPictures .dz-remove {
       margin-top: 10px;
       z-index: 9999;
@@ -10168,8 +10185,8 @@ footer {
     #ordering .order-summary.hittop {
       top: 40px;
       width: 265px;
-      position: fixed;
-      transform: translate(300%, 0%); }
+      position: absolute;
+      right: 0; }
       #ordering .order-summary.hittop.hitbottom {
         position: relative;
         margin-top: 450px;
