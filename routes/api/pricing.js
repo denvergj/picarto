@@ -18,7 +18,7 @@ exports.list = function(req, res) {
 	 	items.price = parseInt(items.price) + 75;
 	 	
 
-	if(req.body.background == 'Detailed') {
+	if(req.body.background == 'Original') {
 	 	if(req.body.size == '16x20') {
 		 	items.price = parseInt(items.price) + 50;
 	 	} else if(req.body.size == '20x24') {

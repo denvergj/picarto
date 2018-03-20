@@ -169,7 +169,7 @@
 			}
 		}
 		&#how-does-it-work {
-			padding: 180px 0 40px 0;
+			padding: 180px 0 80px 0;
 			text-align: center;
 			h3 { 
 				font-family: $primary-font;
@@ -183,15 +183,34 @@
 			    padding: 0 14px;
 			    vertical-align: top;
 			    margin: 50px 0;
+			    position: relative;
+			    span {
+				    position: absolute;
+				    font-size: 170px;
+				    color: #e0e0e0;
+				    top: -60px;
+				    font-family: $primary-font;
+				    margin: 0 auto;
+				    left: 50%;
+				    width: 50px;
+				    left: 50%;
+				    margin-left: -50px;
+			    }
+			    p {
+				    position: relative;
+				    z-index: 9;
+			    }
 			}
 			a {
 				font-family: $primary-font-bold;
-				margin-top: 30px;
+				margin-top: 70px;
 				font-size: 18px;
 				text-decoration: none;
 				display: inline-block;
 				position: relative;
+				padding: 15px 40px;
 				&:after {
+					display: none;
 					content: '';
 					border-bottom: 2px dashed #d94b77;
 				    height: 6px;
@@ -341,7 +360,7 @@
 					p {
 						font-size: 15px;
 						line-height: 25px;
-					}
+					} 
 				}
 			}
 			&#how-does-it-work {
@@ -353,8 +372,23 @@
 				}
 				.step {
 					width: 100%;
-					margin: 20px 0;
+					margin: 20px 0 70px;
 					padding: 0;
+					&:nth-child(2) {
+						margin-top: 50px;
+					}
+					&:nth-child(3),
+					&:nth-child(4) {
+						margin-bottom: 90px;
+					}
+					span {
+						font-size: 100px;
+						top: -40px;
+						margin-left: -25px;
+					}
+				}
+				a {
+					margin-top: 0;
 				}
 			}
 			&#last-minute {

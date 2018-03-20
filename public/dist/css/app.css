@@ -8447,6 +8447,10 @@ section.light-gray {
   background: #f8f8f8;
   padding: 30px 0; }
 
+#body {
+  padding-top: 84px;
+  position: relative; }
+
 .content-container {
   max-width: 1100px;
   padding: 0 20px;
@@ -8820,6 +8824,14 @@ div.wpcf7 .ajax-loader {
 #decline-job .loading-icon {
   visibility: hidden;
   display: none; }
+
+.featherlight:last-of-type {
+  background: rgba(255, 255, 255, 0.9); }
+
+.featherlight .featherlight-content {
+  background: none; }
+  .featherlight .featherlight-content .featherlight-close-icon {
+    display: none; }
 
 .avatar-view {
   display: block;
@@ -9338,9 +9350,12 @@ div.wpcf7 .ajax-loader {
 
 header {
   padding: 25px 45px 9px;
-  position: relative;
   z-index: 999;
-  overflow: hidden; }
+  overflow: hidden;
+  position: fixed;
+  width: 100%;
+  top: 0;
+  background: #fff; }
   header #logo {
     float: left; }
     header #logo img {
@@ -9645,7 +9660,7 @@ footer {
           font-size: 15px;
           display: inline-block; }
   #home section#how-does-it-work {
-    padding: 180px 0 40px 0;
+    padding: 180px 0 80px 0;
     text-align: center; }
     #home section#how-does-it-work h3 {
       font-family: "Glegoo", sans-serif;
@@ -9657,15 +9672,32 @@ footer {
       display: inline-block;
       padding: 0 14px;
       vertical-align: top;
-      margin: 50px 0; }
+      margin: 50px 0;
+      position: relative; }
+      #home section#how-does-it-work .step span {
+        position: absolute;
+        font-size: 170px;
+        color: #e0e0e0;
+        top: -60px;
+        font-family: "Glegoo", sans-serif;
+        margin: 0 auto;
+        left: 50%;
+        width: 50px;
+        left: 50%;
+        margin-left: -50px; }
+      #home section#how-does-it-work .step p {
+        position: relative;
+        z-index: 9; }
     #home section#how-does-it-work a {
       font-family: "Glegoo-Bold", sans-serif;
-      margin-top: 30px;
+      margin-top: 70px;
       font-size: 18px;
       text-decoration: none;
       display: inline-block;
-      position: relative; }
+      position: relative;
+      padding: 15px 40px; }
       #home section#how-does-it-work a:after {
+        display: none;
         content: '';
         border-bottom: 2px dashed #d94b77;
         height: 6px;
@@ -9770,8 +9802,18 @@ footer {
         margin-bottom: 20px; }
       #home section#how-does-it-work .step {
         width: 100%;
-        margin: 20px 0;
+        margin: 20px 0 70px;
         padding: 0; }
+        #home section#how-does-it-work .step:nth-child(2) {
+          margin-top: 50px; }
+        #home section#how-does-it-work .step:nth-child(3), #home section#how-does-it-work .step:nth-child(4) {
+          margin-bottom: 90px; }
+        #home section#how-does-it-work .step span {
+          font-size: 100px;
+          top: -40px;
+          margin-left: -25px; }
+      #home section#how-does-it-work a {
+        margin-top: 0; }
     #home section#last-minute {
       margin: 0 auto 40px;
       padding: 40px 10px; } }
@@ -10139,6 +10181,14 @@ footer {
       #ordering .entry-details .configurate#medium-config,
       #ordering .entry-details .sectors#medium-config {
         padding-top: 0; }
+      #ordering .entry-details .configurate#background-config .config-values,
+      #ordering .entry-details .sectors#background-config .config-values {
+        margin-top: 10px; }
+      #ordering .entry-details .configurate#background-config a,
+      #ordering .entry-details .sectors#background-config a {
+        display: inline-block;
+        text-decoration: underline;
+        color: #666; }
       #ordering .entry-details .configurate#editing-config .config-values .inputs,
       #ordering .entry-details .sectors#editing-config .config-values .inputs {
         display: inline-block;
@@ -10179,7 +10229,7 @@ footer {
     background: #fafafa;
     float: right;
     clear: right;
-    margin-top: -30px;
+    margin-top: 10px;
     width: 25%;
     font-family: "Glegoo", sans-serif; }
     #ordering .order-summary.hittop {

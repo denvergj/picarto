@@ -1,8 +1,11 @@
 header {
 	padding: 25px 45px 9px; 
-	position: relative;
     z-index: 999;
     overflow: hidden;
+    position: fixed;
+    width: 100%;
+    top: 0;
+    background: #fff;
     #logo {
 	    float: left;
 	    img {

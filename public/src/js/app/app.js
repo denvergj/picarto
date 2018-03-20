@@ -192,9 +192,13 @@ $(function(){
 	$('#background-config input').on('ifChecked', function(event){
 	 	$background = $(this).val();
 	 	$sizeValue = $('#size-config select').val();
+	 	$example = $('a#view-example');
 	 	
 	 	$currentPrice = $('#total .value').text().replace('$','');
-	 	if($background == 'Detailed') {
+	 	if($background == 'Original') {
+		 	// Change example.
+		 	$example.attr('data-featherlight','https://res.cloudinary.com/picarto/image/upload/c_fit/a9t21ah9rfzmamgswpaz.jpg');
+		 	
 		 	if($sizeValue == '16x20') {
 			 	$totalVal = parseInt($currentPrice) + 50;
 		 	} else if($sizeValue == '20x24') {
@@ -205,6 +209,9 @@ $(function(){
 		 	
 		 	$('#total .value').text('$'+$totalVal);
 	 	} else {
+		 	// Change example.
+		 	$example.attr('data-featherlight','/dist/imgs/simplified-example.jpg');
+		 	
 	 		if($sizeValue == '16x20') {
 			 	$totalVal = parseInt($currentPrice) - 50;
 		 	} else if($sizeValue == '20x24') {

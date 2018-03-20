@@ -57,6 +57,7 @@ gulp.task('scripts', function(){
   		'public/src/js/vendors/selectric/jquery.selectric.js',
   		'public/src/js/vendors/icheckbox/icheck.min.js',
   		'public/src/js/vendors/dropzone/dist/dropzone.js',
+  		'public/src/js/vendors/featherlight/featherlight.js',
   		'public/src/js/app/*.js' 
   	])
   	.pipe(plumber({

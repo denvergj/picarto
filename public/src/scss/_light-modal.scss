@@ -1,0 +1,11 @@
+.featherlight {
+	&:last-of-type {
+		background: rgba(255,255,255,0.9);
+	}
+	.featherlight-content {
+		background: none;
+		.featherlight-close-icon {
+			display: none;
+		}
+	}
+}

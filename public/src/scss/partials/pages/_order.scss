@@ -127,6 +127,16 @@
 			&#medium-config {
 				padding-top: 0;
 			}
+			&#background-config {
+				.config-values { 
+					margin-top: 10px;
+				}
+				a {
+					display: inline-block;
+					text-decoration: underline;
+					color: #666;
+				}
+			}
 			&#editing-config {
 				.config-values {
 					.inputs {
@@ -173,7 +183,7 @@
 		background: #fafafa;
 		float: right;
 		clear: right;
-		margin-top: -30px;
+		margin-top: 10px;
 		width: 25%;
 		font-family: $primary-font;
 		&.hittop { 
